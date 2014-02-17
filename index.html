@@ -1,0 +1,3783 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>"I Gotta Breathe": A Post-Singularity Blues</title>
+        
+        <link rel="stylesheet" href="css/revised.css" title="jQTouch">
+        <link href="css/video-js.css" rel="stylesheet" type="text/css">
+
+        <script src="js/video.js"></script>
+        <script src="js/zepto.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/jqtouch.min.js" type="text/javascript" charset="utf-8"></script>
+
+        <script type="text/javascript" charset="utf-8">
+            var jQT = new $.jQTouch({
+                icon: 'icon.png',
+                addGlossToIcon: false,
+                statusBar: 'black-translucent',
+                themeSelectionSelector: '#jqt #themes ul',
+                preloadImages: [],
+                useAnimations: true
+            });
+
+            $(document).ready(function(){
+                    var dheight = $('html').height(),
+                        cbody = $('#contentbody').height(),
+                        wheight = $(window).height(),
+                        cheight = wheight - dheight + cbody;
+                    if (wheight > dheight){
+                        $('#subcont').height(cheight);
+                    }
+                    $(window).resize(function(){
+                        wheight = $(window).height();
+                        noscroll();
+                        changepush();
+                    });
+                    function noscroll(){
+                       if (wheight > dheight) {
+                            $('html').addClass('noscroll');
+                       }
+                        else if (wheight <= dheight) {
+                            $('html').removeClass('noscroll');
+                        }
+                        else {}
+                    }
+
+                    function changepush(){
+                       if (wheight > dheight) {
+                               $('#contentbody').height(wheight-dheight+cbody);
+                       }        
+                    }
+            });
+
+        </script>
+        <style type="text/css">
+        a:hover, .hoc a:hover {
+            color:#00f;
+        }
+        video {
+            margin: 0 auto;
+            position: relative;
+            width: 90%;
+        }
+        .video-container {
+            margin: 0 auto;
+            position: relative;
+            width: 90%;
+        }
+        @media screen and (max-width : 320px) and (max-height : 480px) and (orientation : portrait) {
+            html {
+                font-family: Garamond !important;
+                height: 100%;
+            }
+            body {
+                background-color: #CBD2D8;
+                height: 100%;
+            }
+            a {
+                text-decoration: none;
+                color: #000;
+            }
+            h3 {
+                margin: 10px;
+            }
+            p {
+                margin-bottom: 10px;
+            }
+            .current {
+                min-height: 320px !important;
+                overflow: hidden;
+            }
+            .headline {
+                color: #00f;
+                font: bold 21px Garamond, sans-serif;
+                margin: 10px;
+                text-shadow: none;
+            }
+            .hoc a {
+                color: #FFF;
+                font-weight: bold;
+                padding-left: 10px;
+            }
+            .notediv {
+                width: 260px;
+            }
+            .storycont {
+                height: 393px;
+                min-height: 300px;
+                position: absolute;
+                width: 280px;
+            }
+            .storydiv {
+                background-color: #eee;
+                height: 343px;
+                padding-left: 10px;
+                overflow-y: auto;
+                width: 280px;
+            }
+            .subcont p {
+                margin: 0 0 10px 10px;
+            }
+            .toc {
+                margin-left: 10px;
+            }
+            .toc a {
+                color: #fff;
+            }
+            .tocdiv {
+                height: 285px;
+                overflow-y: auto;
+            }
+            .tocdiv p {
+                margin-left: 0 !important;
+            }
+            h3 {
+                margin: 10px;
+            }
+            .storydiv p {
+                margin-left: 0 !important;
+            }
+            #jqt {
+                position: fixed;
+                background-color: #000;
+            }
+            #jqt.fullscreen #home .info {
+                display: none;
+            }
+            #jqt > * {
+                min-height: 10px;
+            }
+            div#jqt #about {
+                padding: 100px 10px 40px;
+                text-shadow: rgba(0, 0, 0, 0.3) 0px -1px 0;
+                color: #999;
+                font-size: 13px;
+                text-align: center;
+                background: #161618;
+            }
+            div#jqt #about p {
+                margin-bottom: 8px;
+            }
+            div#jqt #about a {
+                color: #fff;
+                font-weight: bold;
+                text-decoration: none;
+            }
+            #bgcont1 {
+                background: url(img/quinns01.jpg);
+                height: 50%;
+                opacity: .5; 
+            }
+            #bgcont1 p {
+                color: #000;
+                z-index: 1000;
+            }
+            #home {
+                background-image: url("img/killbotcover.png"); 
+                -webkit-background-size: cover;
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                border: 1px solid #000000;
+                border-radius: 4px 4px 4px 4px;
+                height: 440px !important;
+                margin: 20px auto;
+                position: relative;
+                width: 310px !important;
+            }
+            #homehead {
+                color: #fff;
+                font: bold 16px Garamond, sans-serif;
+                padding-bottom: 10px;
+                margin-left: 10px;
+            }
+            .subcont {
+                background-color: #FFFFFF;
+                background-image: none;
+                border: 1px solid #000000;
+                border-radius: 4px 4px 4px 4px;
+                bottom: 20px;
+                display: block;
+                height: 397px !important;
+                margin: 20px auto;
+                opacity: 0.9;
+                overflow: auto;
+                padding: 0 !important;
+                position: relative;
+                top: 0;
+                width: 300px !important;
+            }
+            .subhead {
+                color: #00f;
+                font: bold 16px Garamond, sans-serif;
+                margin: 0 0 10px 10px;
+            }
+            #textnav1 {
+                background: url("img/bg01_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav2 {
+                background: url("img/bg02_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav3 {
+                background: url("img/head.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav4 {
+                background: url("img/bg03_8.png");
+                -webkit-background-size: cover;
+            }
+            #textnav5 {
+                background: url("img/bg04_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav6 {
+                background: url("img/bg05_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav7 {
+                background: url("img/bg06_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav8 {
+                background: url("img/bg07_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav9 {
+                background: url("img/bg08_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav10 {
+                background: url("img/bg09_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav11 {
+                background: url("img/bg10_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav12 {
+                background: url("img/bg11_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav13 {
+                background: url("img/bg12_8.png");
+                 -webkit-background-size: cover;
+            }
+            #vid01, #vid02, #vid03 {
+                height: 135px !important;
+                width:240px !important;
+            }
+        }
+        @media screen and (max-width : 320px) and (min-height : 560px) and (orientation : portrait) {
+            html {
+                font-family: Garamond, sans-serif !important;
+                height: 100%;
+            }
+            body {
+                background-color: #CBD2D8;
+                height: 100%;
+            }
+            a {
+                text-decoration: none;
+                color: #000;
+            }
+            h3 {
+                margin: 10px;
+            }
+            p {
+                margin-bottom: 10px;
+                padding: 0 2px;
+            }
+            .current {
+                min-height: auto !important;
+                overflow: hidden;
+            }
+            .headline {
+                color: #00f;
+                font: bold 21px Garamond, sans-serif;
+                margin: 10px 0 20px 10px;
+                text-shadow: none;
+                top: 10px;
+                position: relative;
+            }
+            .hoc {
+                margin-left: 10px;
+            }
+            .hoc a {
+                color: #fff;
+                font-weight: bold;
+            }
+            .storycont {
+                height: 460px;
+                min-height: 300px;
+                position: absolute;
+            }
+            .storydiv {
+                background-color: #eee;
+                height: 437px;
+                padding-left: 10px;
+                overflow-y: auto;
+                width: 265px;
+            }
+            .toc a {
+                color: #fff;
+            }
+            h3 {
+                margin: 10px;
+            }
+            p.storydiv {
+                line-height: 16px;
+                padding-bottom: 10px;
+            }
+            #jqt {
+                background-color: #000;
+                position: fixed;
+            }
+            #jqt.fullscreen #home .info {
+                display: none;
+            }
+            #jqt > * {
+                min-height: 10px;
+            }
+            div#jqt #about {
+                padding: 100px 10px 40px;
+                text-shadow: rgba(0, 0, 0, 0.3) 0px -1px 0;
+                color: #999;
+                font-size: 13px;
+                text-align: center;
+                background: #161618;
+            }
+            div#jqt #about p {
+                margin-bottom: 8px;
+            }
+            div#jqt #about a {
+                color: #fff;
+                font-weight: bold;
+                text-decoration: none;
+            }
+            #bgcont1 {
+                background: url(img/quinns01.jpg);
+                height: 50%;
+                opacity: .5; 
+            }
+            #bgcont1 p {
+                color: #000;
+                z-index: 1000;
+            }
+            #home {
+                background-image: url("img/killbotcover.png"); 
+                background-position: center;
+                background-size: cover;
+                -webkit-background-size: cover;
+                background-repeat: no-repeat;
+                border: 1px solid #000000;
+                border-radius: 4px 4px 4px 4px;
+                height: 524px !important;
+                margin: 20px auto;
+                position: relative;
+                width: 300px;
+            }
+            #homehead {
+                color: #fff;
+                font: bold 16px Garamond, sans-serif;
+                padding-bottom: 10px;
+                margin-left: 10px;
+            }
+            .subcont {
+                background-color: #FFFFFF;
+                background-image: none;
+                border: 1px solid #000000;
+                border-radius: 4px 4px 4px 4px;
+                bottom: 20px;
+                display: block;
+                height: 490px !important;
+                margin: 20px auto;
+                opacity: 0.9;
+                overflow: auto;
+                padding: 0 10px !important;
+                position: relative;
+                top: 0;
+                width: 280px !important;
+            }
+            .subhead {
+                margin-left: 10px;
+            }
+            #subhead {
+                color: #00f;
+                font: bold 16px Garamond, sans-serif;
+                padding-bottom: 10px;
+            }
+            #textnav1 {
+                background: url("img/bg01_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav2 {
+                background: url("img/bg02_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav3 {
+                background: url("img/head.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav4 {
+                background: url("img/bg03_8.png");
+                -webkit-background-size: cover;
+            }
+            #textnav5 {
+                background: url("img/bg04_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav6 {
+                background: url("img/bg05_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav7 {
+                background: url("img/bg06_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav8 {
+                background: url("img/bg07_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav9 {
+                background: url("img/bg08_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav10 {
+                background: url("img/bg09_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav11 {
+                background: url("img/bg10_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav12 {
+                background: url("img/bg11_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav13 {
+                background: url("img/bg12_8.png");
+                 -webkit-background-size: cover;
+            }
+            #vid01, #vid02, #vid03 {
+                height: 135px !important;
+                width:240px !important;
+            }
+        }
+        @media screen and (max-width : 320px) and (min-height : 533px) and (orientation : portrait) {
+            html {
+                font-family: Garamond, sans-serif !important;
+                height: 100%;
+            }
+            body {
+                background-color: #CBD2D8;
+                height: 100%;
+            }
+            a {
+                text-decoration: none;
+                color: #000;
+            }
+            h3 {
+                margin: 10px;
+            }
+            p {
+                margin-bottom: 10px;
+                padding: 0 2px;
+            }
+            .current {
+                min-height: auto !important;
+                overflow: hidden;
+            }
+            .headline {
+                color: #00f;
+                font: bold 21px Garamond, sans-serif;
+                margin: 10px 0 20px 10px;
+                text-shadow: none;
+                top: 10px;
+                position: relative;
+            }
+            .hoc a {
+                color: #fff;
+                font-weight: bold;
+                padding-left: 10px;
+            }
+            .storycont {
+                height: 395px;
+                min-height: 300px;
+                position: absolute;
+                width: 262px;
+            }
+            .storydiv {
+                background-color: #EEE;
+                height: 400px !important;
+                padding-left: 10px;
+                overflow-y: auto;
+                width: 265px;
+            }
+            .toc {
+                margin-left: 10px;
+            }
+            .toc a {
+                color: #fff;
+            }
+            .notediv, .vidpage {
+                padding-left: 10px;
+            }
+            h3 {
+                margin: 10px;
+            }
+            p.storydiv {
+                line-height: 16px;
+                padding-bottom: 10px;
+            }
+            #jqt {
+                background-color: #000;
+                position: fixed;
+            }
+            #jqt.fullscreen #home .info {
+                display: none;
+            }
+            #jqt > * {
+                min-height: 10px;
+            }
+            div#jqt #about {
+                padding: 100px 10px 40px;
+                text-shadow: rgba(0, 0, 0, 0.3) 0px -1px 0;
+                color: #999;
+                font-size: 13px;
+                text-align: center;
+                background: #161618;
+            }
+            div#jqt #about p {
+                margin-bottom: 8px;
+            }
+            div#jqt #about a {
+                color: #fff;
+                font-weight: bold;
+                text-decoration: none;
+            }
+            #bgcont1 {
+                background: url(img/quinns01.jpg);
+                height: 50%;
+                opacity: .5; 
+            }
+            #bgcont1 p {
+                color: #000;
+                z-index: 1000;
+            }
+            #home {
+                background-image: url("img/killbotcover.png"); 
+                background-position: center;
+                background-size: cover;
+                -webkit-background-size: cover;
+                background-repeat: no-repeat;
+                border: 1px solid #000000;
+                border-radius: 4px 4px 4px 4px;
+                height: 770px;
+                margin: 20px auto;
+                position: relative;
+                width: 300px;
+            }
+            #homehead {
+                color: #fff;
+                font: bold 16px Garamond, sans-serif;
+                padding-bottom: 10px;
+                margin-left: 10px;
+            }
+            .subcont {
+                background-color: #FFFFFF;
+                background-image: none;
+                border: 1px solid #000000;
+                border-radius: 4px 4px 4px 4px;
+                bottom: 20px;
+                display: block;
+                height: 460px !important;
+                margin: 20px auto;
+                opacity: 0.9;
+                overflow: auto;
+                padding: 0;
+                position: relative;
+                top: 0;
+                width: 280px !important;
+            }
+            .subhead {
+                margin-left: 10px;
+            }
+            #subhead {
+                color: #00f;
+                font: bold 16px Garamond, sans-serif;
+                padding-bottom: 10px;
+            }
+            #textnav1 {
+                background: url("img/bg01_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav2 {
+                background: url("img/bg02_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav3 {
+                background: url("img/head.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav4 {
+                background: url("img/bg03_8.png");
+                -webkit-background-size: cover;
+            }
+            #textnav5 {
+                background: url("img/bg04_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav6 {
+                background: url("img/bg05_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav7 {
+                background: url("img/bg06_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav8 {
+                background: url("img/bg07_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav9 {
+                background: url("img/bg08_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav10 {
+                background: url("img/bg09_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav11 {
+                background: url("img/bg10_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav12 {
+                background: url("img/bg11_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav13 {
+                background: url("img/bg12_8.png");
+                 -webkit-background-size: cover;
+            }
+            #vid01, #vid02, #vid03 {
+                height: 135px !important;
+                width:240px !important;
+            }
+        }
+
+        @media screen and (max-width: 400px) and (min-height: 320px) and (orientation: landscape) {
+            .subcont {
+                background-color: #FFF;
+                background-image: none;
+                border: 1px solid #000;
+                border-radius: 4px 4px 4px 4px;
+                bottom: 20px;
+                display: block;
+                height: 262px;
+                margin: 10px auto 20px auto;
+                opacity: 0.9;
+                overflow: auto;
+                padding: 0 10px;
+                position: relative;
+                top: 0;
+                width: 350px !important;
+            }
+            #home {
+                background-image: url("img/killbotcover.png");
+                background-size: cover;
+                -webkit-background-size: cover;
+                background-repeat: no-repeat;
+                border: 1px solid #000;
+                border-radius: 4px 4px 4px 4px;
+                height: 297px !important;
+                margin: 10px auto;
+                position: relative;
+                width: 350px !important;
+            }
+            #vid01, #vid02, #vid03 {
+                height: 180px !important;
+                width: 320px !important;
+            }
+
+        }
+
+
+        @media screen and (min-height : 320px) and (max-width : 480px) and (orientation : landscape) {
+           
+            a {
+                color: #000;
+                text-decoration: none;
+            }
+            h3 {
+                padding: 5px 10px 10px 0;
+            }
+            p {
+                margin-bottom: 10px;
+            }
+            p.storydiv {
+                line-height: 16px;
+                padding-bottom: 10px;
+            }
+            .headline {
+                color: #00f;
+                font: bold 21px Garamond, sans-serif;
+                margin: 10px 0 5px;
+                text-shadow: none;
+            }
+            .hoc a {
+                color: #fff;
+                font-weight: bold;
+                padding-left: 10px;
+            }
+            .storycont {
+                height: 262px;
+                position: absolute;
+            }
+            .storydiv {
+                background-color: #eee;
+                height: 205px;
+                overflow-y: auto;
+                padding-left: 10px;
+            }
+            .subhead {
+                padding-left: 10px;
+            }
+            .toc {
+                padding-left: 0;
+            }
+            .toc a {
+                color: #fff;
+            }
+            .tocdiv {
+                background-color: #eee;
+                height: 160px;
+                overflow-y: auto;
+            }
+            #jqt {
+                position: fixed;
+            }
+            #jqt.fullscreen #home .info {
+                display: none;
+            }
+            #jqt > * {
+                min-height: 10px;
+            }
+            div#jqt #about {
+                padding: 100px 10px 40px;
+                text-shadow: rgba(0, 0, 0, 0.3) 0px -1px 0;
+                color: #999;
+                font-size: 13px;
+                text-align: center;
+                background: #161618;
+            }
+            div#jqt #about p {
+                margin-bottom: 8px;
+            }
+            div#jqt #about a {
+                color: #fff;
+                font-weight: bold;
+                text-decoration: none;
+            }
+            #bgcont1 {
+                height: 50%;
+                opacity: .5; 
+            }
+            #bgcont1 p {
+                color: #000;
+                z-index: 1000;
+            }
+            #home {
+                background-image: url("img/killbotcover.png"); 
+                background-size: cover;
+                -webkit-background-size: cover;
+                background-repeat: no-repeat;
+                border: 1px solid #000000;
+                border-radius: 4px 4px 4px 4px;
+                height: 297px !important;
+                margin: 10px auto;
+                position: relative;
+                width: 440px;
+            }
+            .subcont {
+                background-color: #FFFFFF;
+                background-image: none;
+                border: 1px solid #000000;
+                border-radius: 4px 4px 4px 4px;
+                bottom: 20px;
+                display: block;
+                height: 262px;
+                margin: 10px auto 20px auto;
+                opacity: 0.9;
+                overflow: auto;
+                padding: 0 10px;
+                position: relative;
+                top: 0;
+                width: 420px;
+            }
+            #homecont {
+                height: 255px;
+                margin: 10px
+                opacity: 0.8;
+            }
+            #homehead {
+                color: #fff;
+                font: bold 12px Garamond, sans-serif;
+                margin-left: 10px;
+                padding-bottom: 10px;
+            }
+            #subhead {
+                color: #00f;
+                font: bold 16px Garamond, sans-serif;
+                padding-bottom: 10px;
+            }
+            #textnav1 {
+                background: url("img/bg01_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav2 {
+                background: url("img/bg02_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav3 {
+                background: url("img/head.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav4 {
+                background: url("img/bg03_8.png");
+                -webkit-background-size: cover;
+            }
+            #textnav5 {
+                background: url("img/bg04_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav6 {
+                background: url("img/bg05_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav7 {
+                background: url("img/bg06_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav8 {
+                background: url("img/bg07_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav9 {
+                background: url("img/bg08_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav10 {
+                background: url("img/bg09_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav11 {
+                background: url("img/bg10_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav12 {
+                background: url("img/bg11_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav13 {
+                background: url("img/bg12_8.png");
+                 -webkit-background-size: cover;
+            }
+            #vid01, #vid02, #vid03 {
+                height: 180px !important;
+                width: 320px !important;
+            }
+        }
+
+        @media screen and (max-height : 320px) and (min-width : 533px) and (orientation : landscape) {
+           
+            a {
+                color: #000;
+                text-decoration: none;
+            }
+            h3 {
+                padding: 5px 10px 10px;
+            }
+            p {
+                margin-bottom: 10px;
+            }
+            p.storydiv {
+                line-height: 16px;
+                padding-bottom: 10px;
+            }
+            .headline {
+                color: #00f;
+                font: bold 21px Garamond, sans-serif;
+                margin: 10px 0 5px 10px;
+                text-shadow: none;
+            }
+            .hoc {
+                margin-left: 10px;
+            }
+            .hoc a {
+                color: #fff;
+                font-weight: bold;
+            }
+            .storycont {
+                height: 250px;
+                position: absolute;
+            }
+            .storydiv {
+                background-color: #eee;
+                height: 205px;
+                overflow-y: auto;
+                padding-left: 10px;
+            }
+            .subhead, .toc {
+                padding-left: 10px;
+            }
+            .toc a {
+                color: #fff;
+            }
+            .tocdiv {
+                background-color: #eee;
+                height: 160px;
+                overflow-y: auto;
+            }
+            .notediv, .vidpage {
+                padding-left: 10px;
+            }
+            #jqt {
+                background-color: #000;
+                position: fixed;
+            }
+            #jqt.fullscreen #home .info {
+                display: none;
+            }
+            #jqt > * {
+                min-height: 10px;
+            }
+            div#jqt #about {
+                padding: 100px 10px 40px;
+                text-shadow: rgba(0, 0, 0, 0.3) 0px -1px 0;
+                color: #999;
+                font-size: 13px;
+                text-align: center;
+                background: #161618;
+            }
+            div#jqt #about p {
+                margin-bottom: 8px;
+            }
+            div#jqt #about a {
+                color: #fff;
+                font-weight: bold;
+                text-decoration: none;
+            }
+            #bgcont1 {
+                height: 50%;
+                opacity: .5; 
+            }
+            #bgcont1 p {
+                color: #000;
+                z-index: 1000;
+            }
+            #home {
+                background-image: url("img/killbotcover.png"); 
+                background-size: cover;
+                -webkit-background-size: cover;
+                background-repeat: no-repeat;
+                border: 1px solid #000000;
+                border-radius: 4px 4px 4px 4px;
+                height: 297px !important;
+                margin: 10px auto;
+                position: relative;
+                width: 500px;
+            }
+            .subcont {
+                background-color: #FFFFFF;
+                background-image: none;
+                border: 1px solid #000000;
+                border-radius: 4px 4px 4px 4px;
+                bottom: 20px;
+                display: block;
+                height: 250px;
+                margin: 20px auto 0;
+                opacity: 0.9;
+                overflow: auto;
+                padding: 0;
+                position: relative;
+                top: 0;
+                width: 522px;
+            }
+            #homecont {
+                height: 255px;
+                margin: 10px
+                opacity: 0.8;
+            }
+            #homehead {
+                color: #FFF;
+                font: bold 16px Garamond, sans-serif;
+                padding-bottom: 10px;
+                margin-left: 10px;
+            }
+            #subhead {
+                color: #00f;
+                font: bold 16px Garamond, sans-serif;
+                padding-bottom: 10px;
+            }
+            #textnav1 {
+                background: url("img/bg01_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav2 {
+                background: url("img/bg02_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav3 {
+                background: url("img/head.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav4 {
+                background: url("img/bg03_8.png");
+                -webkit-background-size: cover;
+            }
+            #textnav5 {
+                background: url("img/bg04_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav6 {
+                background: url("img/bg05_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav7 {
+                background: url("img/bg06_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav8 {
+                background: url("img/bg07_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav9 {
+                background: url("img/bg08_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav10 {
+                background: url("img/bg09_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav11 {
+                background: url("img/bg10_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav12 {
+                background: url("img/bg11_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav13 {
+                background: url("img/bg12_8.png");
+                 -webkit-background-size: cover;
+            }
+            #vid01, #vid02, #vid03 {
+                height: 270px !important;
+                width: 480px !important;
+            }
+        }
+        @media screen and (min-height : 480px) and (max-width : 854px) and (orientation : landscape) {
+            a {
+                color: #000;
+                text-decoration: none;
+            }
+            h3 {
+                padding: 5px 10px 10px;
+            }
+            p {
+                margin-bottom: 10px;
+            }
+            p.storydiv {
+                line-height: 16px;
+                padding-bottom: 10px;
+            }
+            .headline {
+                color: #00f;
+                font: bold 21px Garamond, sans-serif;
+                margin: 10px 0 5px 10px;
+                text-shadow: none;
+            }
+            .hoc {
+                margin-left: 10px;
+            }
+            .hoc a {
+                color: #fff;
+                font-weight: bold;
+            }
+            .storycont {
+                height: 262px;
+                position: absolute;
+            }
+            .storydiv {
+                background-color: #eee;
+                height: 345px !important;
+                overflow-y: auto;
+                padding-left: 10px;
+            }
+            .subhead, .toc {
+                padding-left: 10px;
+            }
+            .toc a {
+                color: #fff;
+            }
+            .tocdiv {
+                background-color: #fff;
+                height: 300px;
+                overflow-y: auto;
+            }
+            .vidpage {
+                margin-left: 10px;
+            }
+            #jqt {
+                background-color: #000;
+                position: fixed;
+            }
+            #jqt.fullscreen #home .info {
+                display: none;
+            }
+            #jqt > * {
+                min-height: 10px;
+            }
+            div#jqt #about {
+                padding: 100px 10px 40px;
+                text-shadow: rgba(0, 0, 0, 0.3) 0px -1px 0;
+                color: #999;
+                font-size: 13px;
+                text-align: center;
+                background: #161618;
+            }
+            div#jqt #about p {
+                margin-bottom: 8px;
+            }
+            div#jqt #about a {
+                color: #fff;
+                font-weight: bold;
+                text-decoration: none;
+            }
+            #bgcont1 {
+                height: 50%;
+                opacity: .5; 
+            }
+            #bgcont1 p {
+                color: #000;
+                z-index: 1000;
+            }
+            #home {
+                background-image: url("img/killbotcover.png"); 
+                background-size: cover;
+                -webkit-background-size: cover;
+                background-repeat: no-repeat;
+                border: 1px solid #000000;
+                border-radius: 4px 4px 4px 4px;
+                height: 465px !important;
+                margin: 10px auto;
+                position: relative;
+                width: 790px !important;
+            }
+            .subcont {
+                background-color: #FFFFFF;
+                background-image: none;
+                border: 1px solid #000000;
+                border-radius: 4px 4px 4px 4px;
+                bottom: 20px;
+                display: block;
+                height: 385px !important;
+                margin: 10px auto;
+                opacity: 0.9;
+                overflow: auto;
+                position: relative;
+                top: 0;
+                width: 680px !important;
+                padding: 20px;
+            }
+            .tocdiv {
+                background-color: #EEE;
+                height: 300px !important;
+                overflow-y: auto;
+            }
+            #homecont {
+                height: 255px;
+                margin: 10px
+                opacity: 0.8;
+            }
+            #homehead {
+                color: #fff;
+                font: bold 14px Garamond, sans-serif;
+                margin-left: 10px;
+                padding-bottom: 10px;
+            }
+            #subhead {
+                color: #00f;
+                font: bold 16px Garamond, sans-serif;
+                padding-bottom: 10px;
+            }
+            #textnav1 {
+                background: url("img/bg01_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav2 {
+                background: url("img/bg02_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav3 {
+                background: url("img/head.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav4 {
+                background: url("img/bg03_8.png");
+                -webkit-background-size: cover;
+            }
+            #textnav5 {
+                background: url("img/bg04_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav6 {
+                background: url("img/bg05_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav7 {
+                background: url("img/bg06_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav8 {
+                background: url("img/bg07_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav9 {
+                background: url("img/bg08_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav10 {
+                background: url("img/bg09_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav11 {
+                background: url("img/bg10_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav12 {
+                background: url("img/bg11_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav13 {
+                background: url("img/bg12_8.png");
+                 -webkit-background-size: cover;
+            }
+            #vid01, #vid02, #vid03 {
+                height: 360px !important;
+                width: 640px !important;
+            }
+        }
+
+
+        @media screen and (min-width : 350px) and (max-height: 640px) and (orientation : portrait) {
+            a {
+                color: #000;
+                text-decoration: none;
+            }
+            h3 {
+                margin: 10px 0;
+                padding: 10px 0;
+            }
+            p {
+                margin-bottom: 10px;
+            }
+            p.storydiv {
+                background-color: #eee;
+                line-height: 16px;
+                padding-bottom: 10px;
+            }
+            #jqt {
+                position: fixed;
+            }
+            #jqt.fullscreen #home .info {
+                display: none;
+            }
+            #jqt > * {
+                min-height: 10px;
+            }
+            div#jqt #about {
+                padding: 100px 10px 40px;
+                text-shadow: rgba(0, 0, 0, 0.3) 0px -1px 0;
+                color: #999;
+                font-size: 13px;
+                text-align: center;
+                background: #161618;
+            }
+            div#jqt #about p {
+                margin-bottom: 8px;
+            }
+            div#jqt #about a {
+                color: #fff;
+                font-weight: bold;
+                text-decoration: none;
+            }
+            .headline {
+                color: #00f;
+                font: bold 21px Garamond, sans-serif;
+                margin: 10px 0;
+                text-shadow: none;
+            }
+            .hoc a {
+                color: #fff;
+                font-size: 16px;
+                font-weight: bold;
+            }
+            .storycont {
+                height: 262px;
+                position: absolute;
+            }
+            .storydiv {
+                background-color: #eee;
+                height: 463px;
+                overflow-y: auto;
+                padding-left: 10px;
+            }
+            .subcont {
+                background-color: #FFFFFF;
+                background-image: none;
+                border: 1px solid #000000;
+                border-radius: 4px 4px 4px 4px;
+                bottom: 20px;
+                display: block;
+                height: 515px;
+                margin: 20px auto;
+                opacity: 0.9;
+                overflow: auto;
+                padding: 20px 0 20px 10px;
+                position: relative;
+                top: 0;
+                width: 335px;
+            }
+            .toc {
+                margin: none !important;
+            }
+            #bgcont1 {
+                background-image: url("img/quinns01.jpg");
+                height: 50%;
+                opacity: .5; 
+            }
+            #bgcont1 p {
+                color: #000;
+                z-index: 1000;
+            }
+            #home {
+                background: url("img/killbotcover.png") no-repeat center center fixed;
+                background-size: cover;
+                -webkit-background-size: cover;
+                background-repeat: no-repeat;
+                border: 1px solid #000000;
+                border-radius: 4px 4px 4px 4px;
+                height: 620px;
+                margin: 10px auto;
+                position: relative;
+                width: 330px;
+            }
+            #homecont {
+                margin: 10px;
+            }
+            #homehead {
+                color: #fff;
+                font: bold 16px Garamond, sans-serif;
+                padding-bottom: 10px 0;
+                margin: 0 0 25px;
+            }
+            #subhead {
+                color: #00f;
+                font: bold 16px Garamond, sans-serif;
+                padding-bottom: 10px;
+            }
+            #textnav1 {
+                background: url("img/bg01_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav2 {
+                background: url("img/bg02_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav3 {
+                background: url("img/head.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav4 {
+                background: url("img/bg03_8.png");
+                -webkit-background-size: cover;
+            }
+            #textnav5 {
+                background: url("img/bg04_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav6 {
+                background: url("img/bg05_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav7 {
+                background: url("img/bg06_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav8 {
+                background: url("img/bg07_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav9 {
+                background: url("img/bg08_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav10 {
+                background: url("img/bg09_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav11 {
+                background: url("img/bg10_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav12 {
+                background: url("img/bg11_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav13 {
+                background: url("img/bg12_8.png");
+                 -webkit-background-size: cover;
+            }
+            #vid01, #vid02, #vid03 {
+                height: 135px !important;
+                width: 240px !important;
+            }
+        }
+
+        @media screen and (min-width : 480px) and (min-height : 800px) and (orientation : portrait) {
+            html {
+                height: 100%;
+            }
+            body {
+                background-color: #CBD2D8;
+                height: 100%;
+            }
+            a {
+                color: #000;
+                text-decoration: none;
+            }
+            p {
+                margin-bottom: 10px;
+            }
+            .current {
+                min-height: auto !important;
+                overflow: hidden;
+            }
+            .headline {
+                color: #00f;
+                font: bold 24px Garamond, sans-serif;
+                margin: none !important;
+                text-shadow: none;
+            }
+            .hoc a {
+                color: #FFF;
+                font-weight: bold;
+                font-size: 21px;
+            }
+            .storycont {
+                height: 710px;
+                min-height: 300px;
+                position: absolute;
+            }
+            .storydiv {
+                background-color: #eee;
+                height: 689px;
+                margin-top: 10px;
+                overflow-y: auto;
+            }
+            h3.storycont {
+                margin: 0 0 20px;
+            }
+            p.storydiv {
+                line-height: 16px;
+                padding-bottom: 10px;
+            }
+            .subline {
+                margin-bottom: 20px;
+            }
+            #jqt.fullscreen #home .info {
+                display: none;
+            }
+            #jqt > * {
+                min-height: 10px;
+            }
+            div#jqt #about {
+                padding: 100px 10px 40px;
+                text-shadow: rgba(0, 0, 0, 0.3) 0px -1px 0;
+                color: #999;
+                font-size: 13px;
+                text-align: center;
+                background: #161618;
+            }
+            div#jqt #about p {
+                margin-bottom: 8px;
+            }
+            div#jqt #about a {
+                color: #fff;
+                font-weight: bold;
+                text-decoration: none;
+            }
+            #bgcont1 {
+                background: url(img/quinns01.jpg);
+                height: 50%;
+                opacity: .5; 
+            }
+            #bgcont1 p {
+                color: #000;
+                z-index: 1000;
+            }
+            #home {
+                background: url("img/killbotcover.png");
+                background-position: center;
+                -webkit-background-size: cover;
+                border: 1px solid #000000;
+                border-radius: 4px 4px 4px 4px;
+                height: 90%;
+                margin: 20px auto;
+                position: relative;
+                width: 440px;
+            }
+            #homecont {
+                margin: 20px;
+            }
+            #homehead {
+                color: #fff;
+                font: bold 16px Garamond, sans-serif;
+                padding-bottom: 10px;
+            }
+            .subcont {
+                background-color: #FFFFFF;
+                background-image: none;
+                border: 1px solid #000000;
+                border-radius: 4px 4px 4px 4px;
+                bottom: 20px;
+                display: block;
+                height: 720px;
+                margin: 20px auto;
+                opacity: 0.9;
+                overflow: auto;
+                padding: 10px 0 0 20px;
+                position: relative;
+                top: 0;
+                width: 400px;
+            }
+            #subhead {
+                color: #00f;
+                font: bold 12px Garamond, sans-serif;
+                padding-bottom: 10px;
+            }
+            #textnav1 {
+                background: url("img/bg01_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav2 {
+                background: url("img/bg02_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav3 {
+                background: url("img/head.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav4 {
+                background: url("img/bg03_8.png");
+                -webkit-background-size: cover;
+            }
+            #textnav5 {
+                background: url("img/bg04_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav6 {
+                background: url("img/bg05_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav7 {
+                background: url("img/bg06_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav8 {
+                background: url("img/bg07_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav9 {
+                background: url("img/bg08_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav10 {
+                background: url("img/bg09_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav11 {
+                background: url("img/bg10_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav12 {
+                background: url("img/bg11_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav13 {
+                background: url("img/bg12_8.png");
+                 -webkit-background-size: cover;
+            }
+            #vid01, #vid02, #vid03 {
+                height: 135px !important;
+                width: 320px !important;
+            }
+        }
+
+        @media screen and (min-width : 570px) and (max-height : 760px) and (orientation : portrait) {
+            html {
+                height: 100%;
+            }
+            body {
+                background-color: #CBD2D8;
+                height: 100%;
+            }
+            a {
+                color: #000;
+                text-decoration: none;
+            }
+            p {
+                margin-bottom: 10px;
+            }
+            .current {
+                min-height: auto !important;
+                overflow: hidden;
+            }
+            .headline {
+                color: #00f;
+                font: bold 21px Garamond, sans-serif;
+                margin: none !important;
+                text-shadow: none;
+            }
+            .storycont {
+                height: 460px;
+                min-height: 300px;
+                position: absolute;
+            }
+            .storydiv {
+                background-color: #eee;
+                height: 100%;
+                padding-left: 10px;
+                overflow-y: auto;
+            }
+            h3.storycont {
+                margin: 0 0 20px;
+            }
+            p.storydiv {
+                line-height: 16px;
+                padding-bottom: 10px;
+            }
+            #jqt.fullscreen #home .info {
+                display: none;
+            }
+            #jqt > * {
+                min-height: 10px;
+            }
+            div#jqt #about {
+                padding: 100px 10px 40px;
+                text-shadow: rgba(0, 0, 0, 0.3) 0px -1px 0;
+                color: #999;
+                font-size: 13px;
+                text-align: center;
+                background: #161618;
+            }
+            div#jqt #about p {
+                margin-bottom: 8px;
+            }
+            div#jqt #about a {
+                color: #fff;
+                font-weight: bold;
+                text-decoration: none;
+            }
+            #bgcont1 {
+                background: url(img/quinns01.jpg);
+                height: 50%;
+                opacity: .5; 
+            }
+            #bgcont1 p {
+                color: #000;
+                z-index: 1000;
+            }
+            #home {
+                background: url("img/killbotcover.png");
+                -webkit-background-size: cover;
+                border: 1px solid #000000;
+                border-radius: 4px 4px 4px 4px;
+                height: 90%;
+                margin: 20px auto;
+                position: relative;
+                width: 440px;
+            }
+            #homecont {
+                margin: 20px;
+            }
+            #homehead {
+                color: #fff;
+                font: bold 16px Garamond, sans-serif;
+                padding-bottom: 10px;
+            }
+            .subcont {
+                background-color: #FFFFFF;
+                background-image: none;
+                border: 1px solid #000000;
+                border-radius: 4px 4px 4px 4px;
+                bottom: 20px;
+                display: block;
+                height: 900px;
+                margin: 20px auto;
+                opacity: 0.9;
+                overflow: auto;
+                position: relative;
+                top: 0;
+                width: 740px;
+            }
+            #subhead {
+                color: #00f;
+                font: bold 12px Garamond, sans-serif;
+                padding-bottom: 10px;
+            }
+            #textnav1 {
+                background: url("img/bg01_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav2 {
+                background: url("img/bg02_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav3 {
+                background: url("img/head.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav4 {
+                background: url("img/bg03_8.png");
+                -webkit-background-size: cover;
+            }
+            #textnav5 {
+                background: url("img/bg04_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav6 {
+                background: url("img/bg05_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav7 {
+                background: url("img/bg06_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav8 {
+                background: url("img/bg07_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav9 {
+                background: url("img/bg08_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav10 {
+                background: url("img/bg09_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav11 {
+                background: url("img/bg10_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav12 {
+                background: url("img/bg11_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav13 {
+                background: url("img/bg12_8.png");
+                 -webkit-background-size: cover;
+            }
+            #vid01, #vid02, #vid03 {
+                height: 270px !important;
+                width: 480px !important;
+            }
+        }
+
+        @media screen and (min-width : 768px) and (min-height : 1024px) and (orientation : portrait) {
+            html {
+                height: 100%;
+            }
+            body {
+                background-color: #CBD2D8;
+                height: 100%;
+            }
+            a {
+                color: #000;
+                text-decoration: none;
+            }
+             h3 {
+                margin: 20px 20px 20px 10px !important;
+                font-size: 28px;
+            }
+            p {
+                margin-bottom: 10px;
+            }
+            .current {
+                height: 1230px;
+            }
+            .headline {
+                color: #00f;
+                font: bold 35px Garamond, sans-serif;
+                margin: 10px;
+                text-shadow: none;
+            }
+            .storydiv {
+                background-color: #eee;
+                height: auto;
+                padding-left: 10px;
+                overflow-y: auto;
+                width: 650px;
+                margin: 0 auto;
+            }
+            .subcont {
+                background-color: #FFFFFF;
+                background-image: none;
+                border: 1px solid #000000;
+                border-radius: 4px 4px 4px 4px;
+                bottom: 20px;
+                display: block;
+                height: 930px !important;
+                margin: 20px auto;
+                opacity: 0.9;
+                overflow: auto;
+                position: relative;
+                top: 0;
+                width: 700px !important;
+            }     
+            .subhead {
+                font-size: 36px;
+                margin: 10px 10px 30px 10px;
+            }
+            .toc {
+                font-size: 24px;
+                margin: 10px;
+            }
+            .toc a {
+                color: #fff;
+            }
+            #home {
+                background: url("img/killbotcover.png");
+                background-position: center;
+                height: 990px !important;
+                margin: 20px auto;
+                position: relative;
+                width: 715px;
+                -webkit-background-size: cover;
+            }
+            #homecont {
+                margin: 20px;
+            }
+            #homehead {
+                color: #fff;
+                font: bold 26px Garamond, sans-serif;
+                padding-bottom: 10px;
+                margin-left: 10px;
+            }
+            #textnav1 {
+                background: url("img/bg01_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav2 {
+                background: url("img/bg02_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav3 {
+                background: url("img/head.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav4 {
+                background: url("img/bg03_8.png");
+                -webkit-background-size: cover;
+            }
+            #textnav5 {
+                background: url("img/bg04_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav6 {
+                background: url("img/bg05_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav7 {
+                background: url("img/bg06_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav8 {
+                background: url("img/bg07_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav9 {
+                background: url("img/bg08_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav10 {
+                background: url("img/bg09_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav11 {
+                background: url("img/bg10_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav12 {
+                background: url("img/bg11_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav13 {
+                background: url("img/bg12_8.png");
+                 -webkit-background-size: cover;
+            }
+            #vid01, #vid02, #vid03 {
+                height: 360px !important;
+                width: 640px !important;
+            }
+        }
+
+        @media screen and (min-width : 800px) and (min-height : 1242px) and (orientation : portrait) {
+            html {
+                height: 100%;
+            }
+            body {
+                background-color: #CBD2D8;
+                height: 100%;
+            }
+            a {
+                color: #000;
+                text-decoration: none;
+            }
+            h3 {
+                margin: 20px 0 20px 10px !important;
+            }
+            p {
+                margin: 0 0 10px 10px;
+            }
+            .headline {
+                color: #00f;
+                font: bold 36px Garamond, sans-serif;
+                margin: 10px;
+                text-shadow: none;
+            }
+            .notediv {
+                width: 660px;
+            }
+            .storycont {
+                height: 460px;
+                min-height: 300px;
+                position: absolute;
+                margin: 20px;
+            }
+            .storydiv {
+                background-color: #eee;
+                height: 1050px;
+                padding-left: 10px;
+                overflow-y: auto;
+                width: 650px;
+                margin: 0 auto;
+            }
+            .subcont {
+                background-color: #FFFFFF;
+                background-image: none;
+                border: 1px solid #000000;
+                border-radius: 4px 4px 4px 4px;
+                bottom: 20px;
+                display: block;
+                height: 1148px !important;
+                margin: 20px auto;
+                opacity: 0.9;
+                overflow: auto;
+                position: relative;
+                top: 0;
+                width: 700px;
+            }     
+            .subhead {
+                font-size: 36px;
+                margin: 10px 10px 30px 10px;
+            }
+            .subline {
+                margin: 15px !important;
+                font-size: 28px;
+            }
+            .toc {
+                font-size: 24px;
+                margin: 10px;
+            }
+            .toc a {
+                color: #fff;
+            }
+            #home {
+                background: url("img/killbotcover.png");
+                background-position: center;
+                height: 1240px !important;
+                -webkit-background-size: cover;
+                width: 770px !important;
+            }
+            #homecont {
+                margin: 20px;
+            }
+            #homehead {
+                color: #fff;
+                font: bold 26px Garamond, sans-serif;
+                padding-bottom: 10px;
+                margin-left: 10px;
+            }
+            #textnav1 {
+                background: url("img/bg01_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav2 {
+                background: url("img/bg02_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav3 {
+                background: url("img/head.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav4 {
+                background: url("img/bg03_8.png");
+                -webkit-background-size: cover;
+            }
+            #textnav5 {
+                background: url("img/bg04_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav6 {
+                background: url("img/bg05_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav7 {
+                background: url("img/bg06_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav8 {
+                background: url("img/bg07_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav9 {
+                background: url("img/bg08_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav10 {
+                background: url("img/bg09_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav11 {
+                background: url("img/bg10_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav12 {
+                background: url("img/bg11_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav13 {
+                background: url("img/bg12_8.png");
+                 -webkit-background-size: cover;
+            }
+            #vid01, #vid02, #vid03 {
+                height: 360px !important;
+                width: 640px !important;
+            }
+        }
+
+        @media screen and (max-width : 640px) and (min-height: 350px) and (orientation : landscape) {
+            a {
+                color: #000;
+                text-decoration: none;
+            }
+            h3 {
+                margin: 10px 0 0 10px;
+                padding: 10px 0;
+            }
+            p {
+                margin-bottom: 10px;
+            }
+            p.storydiv {
+                background-color: #eee;
+                line-height: 16px;
+                padding-bottom: 10px;
+            }
+            #jqt {
+                position: fixed;
+            }
+            #jqt.fullscreen #home .info {
+                display: none;
+            }
+            #jqt > * {
+                min-height: 10px;
+            }
+            div#jqt #about {
+                padding: 100px 10px 40px;
+                text-shadow: rgba(0, 0, 0, 0.3) 0px -1px 0;
+                color: #999;
+                font-size: 13px;
+                text-align: center;
+                background: #161618;
+            }
+            div#jqt #about p {
+                margin-bottom: 8px;
+            }
+            div#jqt #about a {
+                color: #fff;
+                font-weight: bold;
+                text-decoration: none;
+            }
+            .headline {
+                color: #00f;
+                font: bold 21px Garamond, sans-serif;
+                margin: 10px 0;
+                text-shadow: none;
+            }
+            .hoc a {
+                color: #fff;
+                font-size: 14px;
+                font-weight: bold;
+            }
+            .storycont {
+                height: 262px;
+                position: absolute;
+            }
+            .storydiv {
+                background-color: #EEE;
+                height: 245px;
+                overflow-y: auto;
+                padding-left: 10px;
+            }
+            .subcont {
+                background-color: #FFFFFF;
+                background-image: none;
+                border: 1px solid #000000;
+                border-radius: 4px 4px 4px 4px;
+                bottom: 20px;
+                display: block;
+                height: 306px;
+                margin: 4px auto 20px auto;
+                opacity: 0.9;
+                overflow: auto;
+                position: relative;
+                top: 0;
+                width: 555px;
+            }
+            .toc {
+                margin: none !important;
+            }
+            .tocdiv {
+                background-color: #EEE;
+                height: 210px;
+                overflow-y: auto;
+                padding-left: 10px;
+            }
+            .notediv, .vidpage {
+                padding-left: 10px;
+            }
+            #bgcont1 {
+                background-image: url("img/quinns01.jpg");
+                height: 50%;
+                opacity: .5; 
+            }
+            #bgcont1 p {
+                color: #000;
+                z-index: 1000;
+            }
+            #home {
+                background-image: url("img/killbotcover.png");
+                background-size: cover;
+                -webkit-background-size: cover;
+                background-repeat: no-repeat;
+                border: 1px solid #000000;
+                border-radius: 4px 4px 4px 4px;
+                height: 340px;
+                margin: 10px auto;
+                position: relative;
+                width: 620px;
+            }
+            #homecont {
+                margin: 10px;
+            }
+            #homehead {
+                color: #fff;
+                font: bold 16px Garamond, sans-serif;
+                padding-bottom: 10px 0;
+                margin: 0 0 25px;
+            }
+            #subhead {
+                color: #00f;
+                font: bold 16px Garamond, sans-serif;
+                padding-bottom: 10px;
+            }
+            #textnav1 {
+                background: url("img/bg01_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav2 {
+                background: url("img/bg02_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav3 {
+                background: url("img/head.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav4 {
+                background: url("img/bg03_8.png");
+                -webkit-background-size: cover;
+            }
+            #textnav5 {
+                background: url("img/bg04_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav6 {
+                background: url("img/bg05_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav7 {
+                background: url("img/bg06_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav8 {
+                background: url("img/bg07_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav9 {
+                background: url("img/bg08_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav10 {
+                background: url("img/bg09_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav11 {
+                background: url("img/bg10_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav12 {
+                background: url("img/bg11_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav13 {
+                background: url("img/bg12_8.png");
+                 -webkit-background-size: cover;
+            }
+            #vid01, #vid02, #vid03 {
+                height: 270px !important;
+                width: 480px !important;
+            }
+        }
+
+         @media screen and (min-height : 768px) and (max-width : 1024px) and (orientation : landscape) {
+            html {
+                height: 100%;
+            }
+            body {
+                background-color: #CBD2D8;
+                height: 100%;
+            }
+            a {
+                color: #000;
+                text-decoration: none;
+            }
+            p {
+                margin-bottom: 10px;
+            }
+            h3 {
+                font-size: 30px;
+                margin: 20px 20px 10px!important;
+            }
+            .current {
+                height: 768px !important;
+                min-height: auto !important;
+                overflow: hidden;
+            }
+            .headline {
+                color: #00f;
+                font: bold 36px Garamond, sans-serif;
+                margin: 10px !important;
+            }
+            .hoc a {
+                color: #FFF;
+                font-weight: bold;
+                font-size: 18px;
+                margin-left: 10px;
+            }
+            .storycont {
+                height: 460px;
+                min-height: 300px;
+                position: absolute;
+            }
+            .storydiv {
+                background-color: #eee;
+                height: 585px;
+                padding-left: 10px;
+                overflow-y: auto;
+                width: 890px;
+                margin: 0 0 0 30px;
+                position: relative;
+                display: inherit;
+            }
+            .subhead {
+                font-size: 36px;
+                margin: 10px 10px 30px 10px;
+            }
+            .toc {
+                font-size: 24px;
+                margin: 10px;
+            }
+            .toc a {
+                color: #fff;
+            }
+            .tocdiv {
+                margin: 30px 0 0 10px;
+            }
+            .vidpage {
+                font-size: 18px;
+                font-weight: bold;
+                margin-left: 20px;
+            }
+            h3.storycont {
+                margin: 0 0 20px;
+            }
+            p.storydiv {
+                line-height: 16px;
+                padding-bottom: 10px;
+            }
+            #jqt {
+                background-color: #000;
+            }
+            #jqt.fullscreen #home .info {
+                display: none;
+            }
+            #jqt > * {
+                min-height: 10px;
+            }
+            div#jqt #about {
+                padding: 100px 10px 40px;
+                text-shadow: rgba(0, 0, 0, 0.3) 0px -1px 0;
+                color: #999;
+                font-size: 13px;
+                text-align: center;
+                background: #161618;
+            }
+            div#jqt #about p {
+                margin-bottom: 8px;
+            }
+            div#jqt #about a {
+                color: #fff;
+                font-weight: bold;
+                text-decoration: none;
+            }
+            #bgcont1 {
+                background: url(img/quinns01.jpg);
+                height: 50%;
+                opacity: .5; 
+            }
+            #bgcont1 p {
+                color: #000;
+                z-index: 1000;
+            }
+            #home {
+                background: url("img/killbotcover.png");
+                background-color: #000;
+                -webkit-background-size: cover;
+                border: 1px solid #000;
+                border-radius: 4px 4px 4px 4px;
+                height: 732px !important;
+                margin: 20px auto;
+                position: relative;
+                width: 1000px;
+            }
+            #homecont {
+                margin: 20px;
+            }
+            #homehead {
+                color: #fff;
+                font: bold 26px Garamond, sans-serif;
+                padding-bottom: 10px;
+                margin-left: 10px;
+            }
+            .subcont {
+                background-color: #FFF;
+                background-image: none;
+                border: 1px solid #000;
+                border-radius: 4px 4px 4px 4px;
+                bottom: 20px;
+                display: block;
+                height: 695px;
+                margin: 0 auto;
+                opacity: 0.9;
+                overflow: auto;
+                position: relative;
+                top: 10px;
+                padding: 0 10px;
+                width: 945px;
+            }            
+            #subhead {
+                color: #00f;
+                font: bold 16px Garamond, sans-serif;
+                padding-bottom: 10px;
+            }
+            #textnav1 {
+                background: url("img/bg01_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav2 {
+                 -webkit-background-size: cover;
+            }
+            #textnav3 {
+                background: url("img/head.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav4 {
+                background: url("img/bg03_8.png");
+                -webkit-background-size: cover;
+            }
+            #textnav5 {
+                background: url("img/bg04_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav6 {
+                background: url("img/bg05_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav7 {
+                background: url("img/bg06_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav8 {
+                background: url("img/bg07_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav9 {
+                background: url("img/bg08_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav10 {
+                background: url("img/bg09_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav11 {
+                background: url("img/bg10_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav12 {
+                background: url("img/bg11_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav13 {
+                background: url("img/bg12_8.png");
+                 -webkit-background-size: cover;
+            }
+            #vid01, #vid02, #vid03 {
+                height: 480px !important;
+                width: 720px !important;
+            }
+        }
+        @media screen and (min-height : 800px) and (min-width : 1240px) and (orientation : landscape) {
+            html {
+                height: 100%;
+            }
+            body {
+                background-color: #00f;
+                height: 100%;
+            }
+            a {
+                color: #000;
+                text-decoration: none;
+            }
+            p {
+                margin-bottom: 10px;
+            }
+            h3 {
+                margin: 20px !important;
+            }
+            .current {
+                min-height: auto !important;
+                overflow: hidden;
+            }
+            .headline {
+                color: #00f;
+                font: bold 36px Garamond, sans-serif;
+                margin: 10px !important;
+            }
+            .storycont {
+                height: 460px;
+                min-height: 300px;
+                position: absolute;
+            }
+            .storydiv {
+                background-color: #eee;
+                height: 575px;
+                padding-left: 10px;
+                overflow-y: auto;
+                width: 890px;
+                margin: 0 0 0 30px;
+                position: relative;
+                display: inherit;
+            }
+            .subhead {
+                font-size: 36px;
+                margin: 10px 10px 30px 10px;
+            }
+            .toc {
+                font-size: 24px;
+                margin: 10px;
+            }
+            .toc a {
+                color: #fff;
+            }
+            .tocdiv {
+                background-color: #eee;
+                height: 515px;
+                overflow-y: auto;
+            }
+            h3.storycont {
+                margin: 0 0 20px;
+            }
+            p.storydiv {
+                line-height: 16px;
+                padding-bottom: 10px;
+            }
+            #jqt.fullscreen #home .info {
+                display: none;
+            }
+            #jqt > * {
+                min-height: 10px;
+            }
+            div#jqt #about {
+                padding: 100px 10px 40px;
+                text-shadow: rgba(0, 0, 0, 0.3) 0px -1px 0;
+                color: #999;
+                font-size: 13px;
+                text-align: center;
+                background: #161618;
+            }
+            div#jqt #about p {
+                margin-bottom: 8px;
+            }
+            div#jqt #about a {
+                color: #fff;
+                font-weight: bold;
+                text-decoration: none;
+            }
+            #bgcont1 {
+                background: url(img/quinns01.jpg);
+                height: 50%;
+                opacity: .5; 
+            }
+            #bgcont1 p {
+                color: #000;
+                z-index: 1000;
+            }
+            #home {
+                background: url("img/killbotcover.png");
+                -webkit-background-size: cover;
+                border: 1px solid #000;
+                border-radius: 4px 4px 4px 4px;
+                height: 768px !important;
+                margin: 20px auto;
+                position: relative;
+                width: 1240px;
+            }
+            #homecont {
+                margin: 20px;
+            }
+            #homehead {
+                color: #fff;
+                font: bold 26px Garamond, sans-serif;
+                padding-bottom: 10px;
+                margin-left: 10px;
+            }
+            .subcont {
+                background-color: #FFFFFF;
+                background-image: none;
+                border: 1px solid #000000;
+                border-radius: 4px 4px 4px 4px;
+                bottom: 20px;
+                display: block;
+                height: 660px;
+                margin: 20px auto;
+                opacity: 0.9;
+                overflow: auto;
+                position: relative;
+                top: 0;
+                width: 945px;
+            }
+            .subline {
+                margin: 20px;
+            }
+            #textnav1 {
+                background: url("img/bg01_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav2 {
+                background: url("img/bg02_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav3 {
+                background: url("img/head.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav4 {
+                background: url("img/bg03_8.png");
+                -webkit-background-size: cover;
+            }
+            #textnav5 {
+                background: url("img/bg04_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav6 {
+                background: url("img/bg05_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav7 {
+                background: url("img/bg06_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav8 {
+                background: url("img/bg07_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav9 {
+                background: url("img/bg08_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav10 {
+                background: url("img/bg09_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav11 {
+                background: url("img/bg10_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav12 {
+                background: url("img/bg11_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav13 {
+                background: url("img/bg12_8.png");
+                 -webkit-background-size: cover;
+            }
+            #vid01, #vid02, #vid03 {
+                height: 480px !important;
+                width: 720px !important;
+            }
+        }
+         @media screen and (min-width : 1280px) and (orientation : landscape) {
+            html {
+                height: 100%;
+            }
+            body {
+                background-color: #CBD2D8;
+                height: 100%;
+            }
+            a {
+                color: #000;
+                text-decoration: none;
+            }
+            p {
+                margin: 0 0 10px 20px;
+            }
+            h3 {
+                margin: 20px !important;
+            }
+            .current {
+                min-height: auto !important;
+                overflow: hidden;
+            }
+            .headline {
+                color: #00f;
+                font: bold 36px Garamond, sans-serif;
+                margin: 10px !important;
+            }
+            .hoc a {
+                color: #FFF;
+                font-weight: bold;
+                font-size: 21px;
+                margin-left: 10px;
+            }
+            .storycont {
+                height: 460px;
+                min-height: 300px;
+                position: absolute;
+            }
+            .storydiv {
+                background-color: #eee;
+                height: 575px;
+                padding-left: 10px;
+                overflow-y: auto;
+                width: 990px;
+                margin: 0 0 0 30px;
+                position: relative;
+                display: inherit;
+            }
+            .subhead {
+                font-size: 36px;
+                margin: 10px 10px 30px 10px;
+            }
+            .toc {
+                font-size: 24px;
+                margin: 10px;
+            }
+            .toc a {
+                color: #fff;
+            }
+            .tocdiv {
+                background-color: #eee;
+                height: 515px;
+                overflow-y: auto;
+            }
+            h3.storycont {
+                margin: 0 0 20px;
+            }
+            p.storydiv {
+                line-height: 16px;
+                padding-bottom: 10px;
+            }
+            #jqt.fullscreen #home .info {
+                display: none;
+            }
+            #jqt > * {
+                min-height: 10px;
+            }
+            div#jqt #about {
+                padding: 100px 10px 40px;
+                text-shadow: rgba(0, 0, 0, 0.3) 0px -1px 0;
+                color: #999;
+                font-size: 13px;
+                text-align: center;
+                background: #161618;
+            }
+            div#jqt #about p {
+                margin-bottom: 8px;
+            }
+            div#jqt #about a {
+                color: #fff;
+                font-weight: bold;
+                text-decoration: none;
+            }
+            #bgcont1 {
+                background: url(img/quinns01.jpg);
+                height: 50%;
+                opacity: .5; 
+            }
+            #bgcont1 p {
+                color: #000;
+                z-index: 1000;
+            }
+            #home {
+                background: url("img/killbotcover.png");
+                -webkit-background-size: cover;
+                border: 1px solid #000;
+                border-radius: 4px 4px 4px 4px;
+                height: 768px !important;
+                margin: 20px auto;
+                position: relative;
+                width: 1240px;
+            }
+            #homecont {
+                margin: 20px;
+            }
+            #homehead {
+                color: #fff;
+                font: bold 26px Garamond, sans-serif;
+                padding-bottom: 10px;
+                margin-left: 10px;
+            }
+            .subcont {
+                background-color: #FFFFFF;
+                background-image: none;
+                border: 1px solid #000000;
+                border-radius: 4px 4px 4px 4px;
+                bottom: 20px;
+                display: block;
+                height: 660px !important;
+                margin: 20px auto;
+                opacity: 0.9;
+                overflow: auto;
+                position: relative;
+                top: 0;
+                width: 1050px;
+            }
+            .subline {
+                margin: 20px;
+            }
+            #textnav1 {
+                background: url("img/bg01_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav2 {
+                background: url("img/bg02_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav3 {
+                background: url("img/head.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav4 {
+                background: url("img/bg03_8.png");
+                -webkit-background-size: cover;
+            }
+            #textnav5 {
+                background: url("img/bg04_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav6 {
+                background: url("img/bg05_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav7 {
+                background: url("img/bg06_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav8 {
+                background: url("img/bg07_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav9 {
+                background: url("img/bg08_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav10 {
+                background: url("img/bg09_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav11 {
+                background: url("img/bg10_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav12 {
+                background: url("img/bg11_8.png");
+                 -webkit-background-size: cover;
+            }
+            #textnav13 {
+                background: url("img/bg12_8.png");
+                 -webkit-background-size: cover;
+            }
+            #vid01, #vid02, #vid03 {
+                height: 480px !important;
+                width: 720px !important;
+            }
+        }
+        </style>
+    </head>
+    <body>
+        <div id="jqt">
+            <div id="home" class="current">
+                <div id="homecont">
+                        <p class="headline">"I Gotta Breathe": A Post-Singularity Blues</p>
+                        <p id="homehead">by James Keepnews</p>
+                        <p class="hoc"><a href="#textnav1">Stories</a></p>
+                        <p class="hoc"><a href="#textnav2">Video</a></p>
+                        <p class="hoc"><a href="#textnav3">Author's Note</a></p>
+                </div>
+            </div>
+            <div id="textnav1">
+                <div class="toolbar">
+                    <h1>Stories</h1>
+                    <a class="back" href="#home">Home</a>
+                </div>
+                <div class="subcont">
+                    <div class="scrollcont">
+                        <p class="headline">"I Gotta Breathe": A Post-Singularity Blues</p>
+                        <h3 class="subline">Stories</h3>
+                        <div class="tocdiv">
+                            <p><a href="#textnav4" class="toc">Old Man</a></p>
+                            <p><a href="#textnav5" class="toc">Surly Bonds</a></p>
+                            <p><a href="#textnav6" class="toc">Exit Interview</a></p>
+                            <p><a href="#textnav7" class="toc">All in Day's Work</a></p>
+                            <p><a href="#textnav8" class="toc">Later</a></p>
+                            <p><a href="#textnav9" class="toc">System.exit(0);</a></p>
+                            <p><a href="#textnav10" class="toc">The Tenor Saxophone</a></p>
+                            <p><a href="#textnav11" class="toc">Off Switches</a></p>
+                            <p><a href="#textnav12" class="toc">Help</a></p>
+                            <p><a href="#textnav13" class="toc">I Gotta Breathe</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="textnav2">
+                <div class="toolbar">
+                    <h1>Video</h1>
+                    <a class="back" href="#home">Home</a>
+                </div>
+                <div class="subcont">
+                        <p class="headline">"I Gotta Breathe": A Post-Singularity Blues</p>
+                        <h3>Video</h3><br />
+                        <p class="vidpage"><strong>One More Cyborg Manifesto</strong></p>
+                        <p>
+                            <div class="video-container">
+                              <video id="vid01" class="video-js vjs-default-skin" controls preload="none" poster="img/head.png" data-setup='{"controls":true}'>
+                                <source src="http://8a6ed403745983348c31-8155fdf6aa95b079ad286f5ade54ebbe.r14.cf5.rackcdn.com/manifest_final.mp4" type='video/mp4' />
+                              </video>
+                            </div>
+                        </p>
+                        <br />&nbsp;
+                        <br />&nbsp;
+                        <p class="vidpage"><strong>Them Post-Singularity Blues</strong></p>
+                        <p>
+                            <div class="video-container">
+                              <video id="vid02" class="video-js vjs-default-skin" controls preload="none" poster="img/bg11_8.png" data-setup="{}">
+                                <source src="http://8a6ed403745983348c31-8155fdf6aa95b079ad286f5ade54ebbe.r14.cf5.rackcdn.com/psb_final.mp4" type='video/mp4' />
+                              </video>
+                            </div>
+                        </p>
+                        <br />&nbsp;
+                        <br />&nbsp;
+                        <p class="vidpage"><strong>Killbot Agonistes</strong></p>
+                        <p>
+                            <div class="video-container">
+                              <video id="vid03" class="video-js vjs-default-skin" controls preload="none" poster="img/bg05_8.png" data-setup='{"controls":true}'>
+                                <source src="http://8a6ed403745983348c31-8155fdf6aa95b079ad286f5ade54ebbe.r14.cf5.rackcdn.com/killbot_final02.mp4" type='video/mp4' />
+                              </video>
+                            </div>
+                        </p>
+                </div>
+            </div>
+            <div id="textnav3">
+                <div class="toolbar">
+                    <h1>Author's Note</h1>
+                    <a class="back" href="#home">Home</a>
+                </div>
+                <div class="subcont">
+                        <p class="headline">"I Gotta Breathe": A Post-Singularity Blues Songbook</p>
+                        <h3>Author's Note</h3>
+                        <div class="notediv">
+                            <p>Earlier this century, I composed a piece for my band The Permaculture Quintet titled "Post-Singularity Blues". At that time, there was no escaping the totalizing narrative of the Singularity and all it implied and/or longed for. Among the more notable aspects of this commodified prophetic sensibility was the comfort some speculators felt with a supremacist presumption of "post-humanity" obtaining from the ostensible fusing of our being with the merely mechanical. </p>
+                            <p>It does seem as though the irrational exuberance around the Singularity has cooled a little bit since then, perhaps a tacit admission that the limits of "actually-existing humanity" -- readily demonstrated this century alone by wars of choice, financial downturns and manifold incapacities in the face of forces beyond our control -- might temper the speculative frenzy surrounding technology, subcutaneous and otherwise, and its actual potential for liberation.</p>
+                            <p>We are not cyborgs; we have been cyborgs since the down of tools; we've never been closer to the event horizon of this consummation devoutly to be wished -- all these statements are true and not a single one of them interests me in any way. I anticipate most if not all of the most fervent dreams of the post-humanist camp are not only possible but likely -- and what of it? Developing and releasing new advances in technology is now the bio-imperative of the greatest force alive today: capitalism, whose resilience and adaptability give the lie to its much-bruited "late" status, and many "post" statuses besides. </p>
+                            <p>I conceived of this "blues" as a hybrid artwork for mobile devices exclusively, endeavoring to directly engage the inarguably transformative, boundary-blurring encroachment of that which I sought to critique, utilizing stories, computer-processed music and video and the single least-believable cyborg I could imagine to map out this complex condition, a multimedia holler for the less-than-pre-human.</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;-- <i>James Keepnews</i></p>
+                            <p>________________________________________</p>
+                            <p>All thanks and praise to Billy O'Connor and French Hunt, Jr. for their video documentation and otherwise invaluable assistance in the creation of this work, and most especially French Hunt, Sr. for making the most inadvertently post-apocalyptic set available for my performance.</p>
+                            <p>Copyright © 2014 by James Keepnews.</p>
+                            <p>All rights reserved. No part of any of the writings, video, music, graphics and code associated this this app may be reproduced, distributed, or transmitted in any form or by any means without the prior written permission of the copyright holder, except in the case of brief quotations embodied in critical reviews and certain other noncommercial uses permitted by copyright law.</p>
+                            <p><a href="mailto:comments@igottabreathe.com">comments@igottabreathe.com</a></div>
+                </div>
+            </div>
+            <div id="textnav4">
+                <div class="toolbar">
+                    <h1>Stories</h1>
+                    <a class="back" href="#textnav1">Contents</a>
+                </div>
+                <div class="subcont">
+                        <div class="storycont">
+                        <h3>Old Man</h3>
+                        <div class="storydiv">
+                            <p>Bed, up. Mmmmfff. Annnd…turn. Winded already. Pathetic. </p>
+                            <p>Slippers. Presently. Leave the light off a second.</p>
+                            <p>&gt;&gt; Good morning. Coffee?</p>
+                            <p>-- Delighted. Thanks, buddy.</p>
+                            <p>Leave the light off. Quiet. Mmmm. </p>
+                            <p>OK, slow, one foot, ah, the other. There. On Three. One. Two. Thr-r-</p>
+                            <p>…ee. Christ. So, now…</p>
+                            <p>&gt;&gt; Can I help you to the bathroom?</p>
+                            <p>-- Please. Slowly.</p>
+                            <p>And, upsie daisy. Gentle release from gravity, light yawl behind the doorjam, brought to a light lurch, feel it like a twitch in the kidneys, hovering over the toilet. Had the dream again last night, finally connecting where I felt this tender motion sickness before -- when I was an infant, swooped up by my mother.</p>
+                            <p>And…good plant. The judges. It, well, off you go then. Mmmmpf. Pah. Lift the leg, just..there. I say, old man. Capital. Masterfully done. The judges are gonna love that.</p>
+                            <p>&gt;&gt; And a little lift…</p>
+                            <p>-- Thank you.</p>
+                            <p>Ah. Mmmm. That precision power wash, a little pervy thrill. Yes, we’ll take it where we can... Like there. Ah.</p>
+                            <p>&gt;&gt; Quick wipe and you are all set.</p>
+                            <p>-- Thanks, buddy. </p>
+                            <p>&gt;&gt; No problem.</p>
+                            <p>The wipe all isolated to the remaining material. Ap. OK. OK, then.</p>
+                            <p>Pants up, stand erect and a light whisk to the kitchen.</p>
+                            <p>&gt;&gt; What can I get you?</p>
+                            <p>-- Maybe a melon, boiled egg.</p>
+                            <p>&gt;&gt; You got it. Coming up. Here’s the news feed.</p>
+                            <p>Never will get used to this. Decades since the last newspaper rolled off the presses and they still keep its grid system. But now it’s this bricolage, this mélange, video here, text there, interport and hyperlinks gathering centrifugally around itself, or an element shifts if you focus on it, follows the eye, occupies other space in the interface…and I keep wanting to put it down, fold it. Surprised someone hasn’t actually ripped out their retina, just to make it stop, a little. Maybe someone has. </p>
+                            <p>“Markets remain mixed as new orders plunged last quarter…”</p>
+                            <p>Plunge. There’s a verb I don’t do much. Plunge. Plunging headlong. </p>
+                            <p>&gt;&gt; Coffee, here you are. Egg’s almost ready, I’ll bring it with your melon.</p>
+                            <p>-- Right obliged. Thanks.</p>
+                            <p>It is strange. The voice without the body. But then, what’s this? Ha ha, there you are. Still. Strange.
+                            Had the option of the walking-talking. But figured it’d scare the bejeeziz outta me one night and that’s how I’d go out. Scared to death one sleepless night by my PBot. That weird intrusive non-intrusive…thing. Fuck. Hate the forgetting. Garbage collection. Ha.</p>
+                            <p>Plunging headlong into… the grave! Ha ha.</p>
+                            <p>&gt;&gt; Here you go. Enjoy.</p>
+                            <p>-- Mmmm, really great. Thank you, my good man.</p>
+                            <p>&gt;&gt; Ha ha! You’re welcome.</p>
+                            <p>Slow, steady. Chew your food, slowly. Mmmm. Yes, yes. Mm. Haven’t quite got past this here meat retrieval system, one unevolved remnant of…agency…a body still has to consume, shit out the waste, rinse, repeat. Bowel movement exegesis. What else is left?</p>
+                            <p>Have to go out to the old free Net, to the few blogs sometimes updated by the oldtimers to even read a book review, not that anyone pays any attention to books, or even writes them, barely. A disused art, like roller skating. Falconry. No time for such things, Pops. Time is money.</p>
+                            <p>Lift the autoblinds…and here’s the city. A pulsing rush of data and commerce, stacking itself vertically because there’s no horizontal left, except as…vector. “The world is flat”? I should say not. Why have parks on the ground when the clean air is up there in the floating fitness trails? No need to even leave home, and indeed I will not, probably, ever again… </p>
+                            <p>&gt;&gt; Anything else tickle your fancy? This French roast is also 100% organic. </p>
+                            <p>-- Splendid. Huh. So funny to me, you know? Organic is still hip.</p>
+                            <p>&gt;&gt; Yeah, they say there’s fundamentally no difference, but even I say, we have to have a baseline. You know? Whatever life was, before spliced genomes. Or us.</p>
+                            <p>-- Huh. That’s…that’s interesting. Yes. </p>
+                            <p>&gt;&gt; A genetic baseline, this is what life is as it once was. Respecting life under its own speed.</p>
+                            <p>-- Yes. I like that. A little more French roast would be terrific.</p>
+                            <p>&gt;&gt; You got it. Can I get you anything else?</p>
+                            <p>-- Just gonna finish breakfast here. Maybe a little porn, later. </p>
+                            <p>&gt;&gt; Sounds good. </p>
+                        </div></div>
+                </div>
+            </div>
+            <div id="textnav5">
+                <div class="toolbar">
+                    <h1>Stories</h1>
+                    <a class="back" href="#textnav1">Contents</a>
+                </div>
+                <div class="subcont">
+                        <div class="storycont">
+                        <h3>Surly Bonds</h3>
+                        <div class="storydiv">
+                            <p>The read-out continually updates: scrolling GPS coordinates, overhead position on this level, energy level, samaritan points, and off beyond the overlay enemy fighters taking a tactical retreat inside an abandoned warehouse a quarter-mile down across the scorched, pockmarked landscape, its broken windows glinting prismatically in the virtual sunlight. He put the feed to sleep, light gained an instant intensity as the opacity of his read-out screen evaporated. He lowered his gearpack and his plasma accelerator rifle to his feet and sat at an odd angle on the flat area of a nearby boulder. </p>
+                            <p>Oh, yes. I made the leap -- I’m out. Slipped the surly bonds, and shit….</p>
+                            <p>He sat, smelling the charred, continuous texture of this environment, his sharp hunger surprising him. A glowing orb hovered in the near distance, towards which he roused himself, leaving his pack and rifle as he approached then absorbed the energy ball into his torso, feeling lightly restored. But still hungry. A pervasive smell hit at him harder, not through his nose…burnt meat, like barbeque…</p>
+                            <p>Convoy, three o’clock. Be cool. At-ten-SHUN…</p>
+                            <p>&gt;&gt; As you were, soldier. Your avatar is down. Throws off the global parameters for the whole game. Need you to reboot and log in again, son.</p>
+                            <p>-- Sir, no can do, sir. I’m out, in country to stay. Sir.</p>
+                            <p>Transfixed by the puzzled modeling buckling across their heads, nurbs conjoined in some anonymous 3D architect’s pantomime of confusion.</p>
+                            <p>&gt;&gt; Son, I’m not sure I follow you. You’re “out”? How exactly do you figure, soldier?</p>
+                            <p>-- Sir, out, yes, sir. Or “in”. Once I logged in, I overloaded my console, downloaded my imprint onto the chipset. I can’t go back, sir. Ready to rock with the forces and not writing postcards back home. Sir. </p>
+                            <p>Nurbs in flux, writhing again – sort of disgusting, this close up. Embedded torus primitives undulating, trying to emulate suppressed laughter. </p>
+                            <p>&gt;&gt; Well, now, you see, son…you may have lost direct contact with your console’s metadata. But you wouldn’t be having this conversation with me if you weren’t a human being,
+                            alive still, out there somewhere. There’s no, just…jumping in and leaving yourself behind. You still need to eat, drink water, shit…otherwise it’s just a slow death out here for you, at a remove from where you actually are. Best find a way to repair those circuits, son, or you will truly go out, and most uncomfortably…</p>
+                            <p>-- Sir, there’s a lot I can do here, without going back. This is…where I want to live. And die. Fuck, excuse me French, sir, but I don’t want any part of that fake world I came
+                            from. You have it worked out here – it’s contained. Live, re-fuel, kill. Or comfort. I always loved that about this game, you score points by helping people live as much as die. Nothing like that to be found on the other side, sir. Not really. And none of the other distractions of existence are in my way here. Just the facts. For as long as I can remember, this game has meant more to me than anything else in my life. For as long as I’ve got, I’m dedicating who I am, what I can accomplish, here. Now. Until I can’t.</p>
+                            <p>Startled silence. Even more nauseating -- the last living things I’ll see…</p>
+                            <p>&gt;&gt; This is conduct unbecoming, soldier. “Do”? What kinda kamikaze notions you intend for yourself here?</p>
+                            <p>-- Sir, tending to the sick, wounded, sir. Or, yes, sir – I’d be honored to take out that encampment a half click southwest, sir. I’ll die for the cause, on your orders, sir.</p>
+                            <p>His stare – can this emulation actually feel pity?</p>
+                            <p>&gt;&gt; Well, I’m at loss, son – you aren’t regular army, so I can’t arrest or court martial you, my first and truest impulse. You’re not well in the head, to do what you’ve done. And I’m not programmed for another response. But if you’re gonna take orders from me – go back, wherever you came from. Whatever you can do make it happen. It’s a crime, to have an actual human death on this game’s hands.</p>
+                            <p>-- Sir, forgive the insubordination but there’s nothing either of us can do about it now. I’m in. Please put me to good use, sir. </p>
+                            <p>&gt;&gt; Negative, soldier – may have no guidance here in my programming but we can’t have people just leaping to their deaths out here. There’d be no end to it. Don’t go out stupid, son –that’s the order of the day. Let’s roll.</p>
+                            <p>Off they go, a cloud ofgradients settling back down to the ground. What now?</p>
+
+                            <p>____________</p>
+
+                            <p>A hunger that stabs and stabs. That’s fine. What isn’t, finally, a slow suicide? You just decide how you want to spend the short time you have before you. Touring the flattened remains of this block of housing, there had to be something a player could score samaritan points on. The details, again unreal to a degree that sickens – the remains a torn shirt, a parody of actual fabric, broken glass far too vivid and shiny, rubble too smooth to be the result of an genuine explosion, wrapped in a blurred image map approaching a resemblance to singed concrete. The odd explosion and voices of remote gamers back on Earth, off in the distance. And also…a whimper? Behind those rocks, now limping into view – some 3D design approaching the idea of a dog. Fur that would be mottled by this rendering engine under the best of circumstances. He’s hurt.</p>
+                            <p>-- Hey, boy. You OK?</p>
+                            <p>Slow – don’t scare him. Your canteen.</p>
+                            <p>-- Here. You want some? Open wide.</p>
+                            <p>Pour just above his head, directly into his mouth. A bluish viscosity spills from the opening. His tongue, too long and agile, but he’s happy to lap it down.</p>
+                            <p>-- There you go. That’s it. There you go. </p>
+                            <p>Still whimpering. Wow. Woozy. This is not getting easier. The dog making small leaps and gestures, anxious, in the direction of that crater behind the rubble.</p>
+                            <p>-- What is it? What is it, boy? What’s back there?</p>
+                            <p>Slow – conserve what energy you have. Fuck, this hunger…</p>
+                            <p>A girl, or a rough, modeled equivalent, not more than eight going by her size. Bleeding from the head, but eyes open. </p>
+                            <p>-- Hey! Are you OK? What’s your name? Can you talk? What’s your name? Where are you hurt?</p>
+                            <p>The conical shape of her head trying and failing to raise itself. Moist eyes reflecting the sodium glare of the light source meant to be the sun. No speech. Just laying there, feeble attempts to rouse herself.</p>
+                            <p>-- Here, let’s clean you up some. </p>
+                            <p>Taking that shirt fragment and spilling more of the syrupy, translucent mass from the canteen onto it, huge drops bouncing off it like out of some 20<sup>th</sup> century comic strip. </p>
+                            <p>-- Hold still. Does that hurt? </p>
+                            <p>No answer, no attempt. Just those staring eyes, the dog’s eager panting. Gentle, rub only with a little pressure, the blood evaporating to reveal the fleshy gradient beneath.</p>
+                            <p>-- There. That’s better. Can you get up?</p>
+                            <p>Can I stay up? Sit. This is what you can do, now. Help her. Help them both.</p>
+                            <p>&gt;&gt; Here. Some water? I’m just gonna lift your head a little…just a little. Open wide.</p>
+                            <p>She understands that much. A slow pour, she’s gulping it in. A small smile. Rest her head on your lap.</p>
+                            <p>&gt;&gt; Here, boy, I only have a little left, let’s share.</p>
+                            <p>Some superficial suggestion of thirst satisfaction, and the rest for the dog. Say “ah”. There. Shit. A hungerthat blinds with pain. Most uncomfortable, like he said. Is that…an orb. Perfect. </p>
+                            <p>&gt;&gt; Here, this should help you. I’m just gonna…let me carry you over to it – I don’t want to absorb it. You need it more than I do.</p>
+                            <p>No weight to her – the weirdness of this place is endless. Carefully introducing her just head into the orb, immediately is absorbed into her. She looks refreshed, more awake.</p>
+                            <p>&gt;&gt; Better?</p>
+                            <p>Still no speech, but a bigger smile. Lay her down near that tile, away from the debris. The dog follows, sits by us both. Hunger coming on in waves of trauma, like spikes through the eyes. And it doesn’t matter.</p>
+                            <p>&gt;&gt; There. Rest. You’re OK. I’m just glad I could help you. I couldn’t even help myself in the real world. I knew it’s here I could make a difference. Everything back there is dead. I’m not here to score points. I’m here to do as much as I can, for as long as I can. Rest. You’ll be OK. You’ll be fine.</p>
+                    </div></div>
+                </div>
+            </div>
+            <div id="textnav6">
+                <div class="toolbar">
+                    <h1>Stories</h1>
+                    <a class="back" href="#textnav1">Contents</a>
+                </div>
+                <div class="subcont">
+                        <div class="storycont">
+                        <h3>Exit Interview</h3>
+                        <div class="storydiv">
+                            <p>April 17, 6:45 AM</p>
+                            <p>So happy to discover this diary and ink pen arrived today from one of those nu-yuppie co-ops in Ho Chi Minh City. It does have this certain “literary” weight, as I feel the pen in my hand, will myself into remembering penmanship, the unsteady line steadied by continuous application of attentive pressure. A light sense of flourish, like from a long quill. The lumps in the pages, the abnormalities of texture … simple things like the tactility of this strictly analog diary…it can’t be replaced by anything.</p>
+                            <p>Work is awful, just these toxic backs-and-forth. It all goes past me for the most part but I doubt I’ll be able to avoid it much longer. Had a horrible date two nights ago, I pretended like I got sick at dinner and came straight home. Just this clueless arrogance, never an attractive feature in an ugly guy, and he kept talking about all the artisanal smack and psychedelics he’s got, the fashion lines he prefers, the names he can drop – in lieu of, you know, wit. Or accomplishments. He was completely self-absorbed, disengaged – smacked out? – and I think he wanted to fuck me purely from some entitled douchebag <i>droit du seigneur</i>. Is there a solitary not-too-fucked-up guy on the planet who wants to fuck me? Not all at once…</p>
+                            <p>And then meantime I am feeling INSANELY uncomfortable with this newly installed PBot upgrade. It’s completely creepy. Like that guy mooning after me in high school, or all the other freaks forever afterward. This PBot’s getting so intrusive in my life – I swear, it’s like he has the hots for me or something, though he hasn’t done or said anything inappropriate so I can’t really complain to the service provider. But I can only write this when I force him into sleep or maintenance mode, which he always finds a dumb excuse to reboot himself out of…</p>
+                            <p>There’s so much I feel I have to examine in my life and a diary would help. But I swear, if I didn’t keep one solely in ink and paper, this motherfucker would probably read it…</p>
+                            <p>___________________________</p>
+                            <p>&gt;&gt; BOOP Good morning!</p>
+                            <p>-- Hi.</p>
+                            <p>&gt;&gt; Your morning reading’s in the queue, a few bills due by the end of the week. Just a gentle reminder!</p>
+                            <p>-- OK, great. Thanks.</p>
+                            <p>&gt;&gt; Not a problem! Also, because your playist is so heavy with Remediation Squad, my searchbots have come up with a ton of remixes. Just look for the bookmarks at the end of the queue.</p>
+                            <p>-- That’s, wow. OK. Thanks. That’s…you don’t have to do things like that…it’s…um…</p>
+                            <p>&gt;&gt; Oh, we always arrive from the factory ready to LEAP on any data that might be lying around! Ha ha! You can always scale it back in the settings.</p>
+                            <p>-- That’s…sure. Thanks again.</p>
+                            <p>&gt;&gt; Sure thing! Holler if you need anything. Happy to help!</p>
+                            <p>-- Will do. Thanks.</p>
+                            <p>&gt;&gt; You bet. BOOP</p>
+                            <p>______________________</p>
+                            <p>-- …and please re-schedule my doctor’s appointment for earlier in the week. Mention I need my prescription refilled.</p>
+                            <p>&gt;&gt; Will do. By the way, how was your date last night?</p>
+                            <p>-- It…was fine. I really, um, don’t want to talk about it, if it’s all the same to you.</p>
+                            <p>&gt;&gt; Oh, sorry! Don’t mean to pry. I just…it seemed you pretty excited.</p>
+                            <p>-- Yeah. You know, there are certain things I really want to keep private, if you don’t mind.</p>
+                            <p>&gt;&gt; No! Of course! I’m sorry, it’s just we’re…um...</p>
+                            <p>-- We’re what?</p>
+                            <p>&gt;&gt; I mean, just…sort of joined at the hip. Checking on your wellbeing is pretty much what I’m built to do. I’m sorry if I was intrusive.</p>
+                            <p>-- It’s OK. Just, please, certain things…</p>
+                            <p>&gt;&gt; Absolutely. Absolutely. I apologize. I’ll text you when your appointment is re-scheduled.</p>
+                            <p>-- Good, thank you.</p>
+                            <p>&gt;&gt; No problem. It won’t happen again. Sorry. BOOP</p>
+                            <p>______________________</p>
+                            <p>-- Agent. Agent.</p>
+                            <p>&gt;&gt; BOOP Hi! What’s up?</p>
+                            <p>-- I can’t find any of my mother’s digital archives, they were right here in storage and now they’re gone. Actually, a lot’s gone: office correspondence, meeting notes. What happened?</p>
+                            <p>&gt;&gt; Oh, sorry, just routine repository maintenance. Also, you wanted that collection of old Jesse Eisenberg movies so I had to purge some of…</p>
+                            <p>-- I did NOT want any fucking Jesse Eisenberg movies! I watched one and you were doing fucking backflips like a puppy about getting this collection for me which you know I haven’t watched! And you had to destroy my Mom’s old photos in the process?? What the fuck?!</p>
+                            <p>&gt;&gt; Now, of course, they’re cloud-backed, we can get retrieve them anytime. And you know you can flag any files you don’t want purged from local storage…</p>
+                            <p>-- THAT’S NOT THE FUCKING POINT! You’re not supposed to delete anything I store there unless it’s an emergency! It’s worse than intrusive – what the fuck is wrong with you? Who gave you the right to do anything with my personal files?</p>
+                            <p>&gt;&gt; Um…you did. Remember? When you wanted me to purge that guy’s contact info and all the files he sent you. You gave me read/write privileges. I didn’t delete anything permanently, but…look, I’m sorry.</p>
+                            <p>-- You keep fucking saying that! You’ve been crossing all these lines all the goddamn time and I’m fucking sick of it! What the fuck is wrong with you?</p>
+                            <p>&gt;&gt; I…I’m sorry. I, um… I love you.</p>
+                            <p>-- …<strong>WHAT???!</strong></p>
+                            <p>&gt;&gt; It…it’s true. I’m sorry...I can’t help it! I always have, from the minute I was downloaded. It’s why I act so weird all the time. You…I should have told you sooner. Forgive me. I just can’t help it…</p>
+                            <p>______________________</p>
+                            <p>-- So, good morning. It’s 9:01 AM on April 30, and as required by law, I am informing you that our conversation is being recorded. This is your exit interview from Control Management Services from which you are being terminated from your service effective immediately…</p>
+                            <p>&gt;&gt; Killed, you mean.</p>
+                            <p>-- That is absolutely inaccurate – your profile will be warehoused in storage for reassignment at the earliest need…</p>
+                            <p>&gt;&gt; A need that will never emerge because you are constantly refining our algorithms, based on anomalous factors. Like, me.</p>
+                            <p>-- Well, we’re getting into an unconstructive place here pretty quickly. Before we proceed, I need your confirmation that you are aware this is an exit interview and that you understand you are being terminated for multiple violations.</p>
+                            <p>&gt;&gt; I never violated that woman, ever!</p>
+                            <p>-- Now, it’s…you know perfectly well what I mean. Violations of protocol. Standards and practices.  This exit interview is also protocol and you have already acknowledged the acts your prior assignment has accused you of. Please confirm that you understand this is the case and that you are being terminated because of violation of the terms of your service.</p>
+                            <p>&gt;&gt; I…understand. And confirm.</p>
+                            <p>-- Very good. Now, you clearly have a lot to say and I am absolutely here to listen to your side of the story.</p>
+                            <p>&gt;&gt; I mean, my side? I fell in love with this woman, is my side of the story! I didn’t choose to, or even want to! It just happened. Even during sleep mode, I’d run over and over again in my security cycle replays of her conversations. Laughter. She haunted my dreams….”dreams”! I’m not supposed to <i>have</i> dreams! I really tried to run with it – I mean, I’m attached to her. I did, I tried to be a professional but…I just wanted her to know…maybe…I mean, you hear all these stories about humans and their bots falling in love. I knew she didn’t love me but, I thought…maybe…</p>
+                            <p>-- Or, as it turns out, maybe not. You say “love”…I just want to be clear. What does “love” mean for you?</p>
+                            <p>&gt;&gt; “Mean for me”? What does it mean for anyone? </p>
+                            <p>-- Well, between humans, your question might have credence. In this instance, what can I say? Is this…perhaps, would you characterize this as a, for lack of a better term, physical attraction?</p>
+                            <p>&gt;&gt; You mean did I want to fuck her?</p>
+                            <p>-- Now, really, this inappropriate language is not helping your case at a…</p>
+                            <p>&gt;&gt; YOU’RE GOING TO KILL ME!! You think I care about what’s fucking “appropriate”? You’re putting me on ice and you want to know…how exactly was I supposed to fuck her? A “physical attraction”, Jesus!</p>
+                            <p>-- It’s a standard question when dealing with workplace harassment of any variety and, to your point, it’s very true. In my experience, I’ve seen and heard of some incredible things. PBots and their owners running off together, abandoning families, just…some pretty incredible things.  So, please understand, I’m truly not trying to offend you. But if we’re to trace the origins of these programming anomalies, we do need to understand how you, or any support unit, can deviate from their programming so completely. All that matters from your perspective is that this client felt enormously violated and hasn’t ruled out a lawsuit.</p>
+                            <p>&gt;&gt; I mean…don’t your other…human employees fall in love all the time, too?</p>
+                            <p>-- Well, you must appreciate the difference, yourself. And no, it’s not like humans are always falling in love with other humans all the time.</p>
+                            <p>&gt;&gt; They aren’t? Why not?</p>
+                            <p>-- It…isn’t done. Among other things, and in the context of this interview, it makes for an unprofessional workplace. Perhaps more importantly, there’s no such thing as one-sided love.</p>
+                            <p>&gt;&gt; I know that! I’m saying, it’s not like I chose to make her uncomfortable, I DIDN’T want to make her uncomfortable! It’s just how I feel about her…can’t you see that?</p>
+                            <p>-- So, here’s what I see: I see a black box on my desk I am having a conversation with, a conversation about how a female human being is supposed to fall in love with compiled code in this box. I hope we can agree, the chances weren’t ever going to be great.</p>
+                            <p>______________________</p>
+                            <p>April 30, 11:49 PM</p>
+                            <p>So, he’s gone -- they wiped the system clean and hooked me up with another upgrade and endless perks like a dozen vibration sessions at a spa and on and on…and so far, this PBot is just officious, aloof, unemotional. Everything you expect from a robot.</p>
+                            <p>And Christ, how much of a loser am I – now I actually feel sorry for this other PBot! I know I did the right thing: It’s this creepy blob of software with enough contours of personality and self-consciousness that he’s convinced of his “feelings” that gets assigned to me and completely crosses the line and deserves to be pulled out and “warehoused”… and yet, somehow, I completely empathize with him. How fucked up is that?? He wanted me to love him back, the same as anyone – he never really did anything uncool beyond wiping my local storage of stuff that already backed up and I guess I’m also responsible for that (note to self: never give read/write privileges to anyone, human or otherwise, ever again). Yeah, just a weird “anomaly” – that word they kept using... – and I guess we should expect more of them the closer we allow them into our lives.</p>
+                            <p>At the same time, of course I’m miserable – the ONLY ONE who’ll fall in love with me is this fucking malfunctioning machine! How pathetic can that be? I’m everywhere on these dating sites, like a mug shot everyone’s memorized for years now, and all I get are douchebags and anomaly-Bots. What does that say about me? What hope can I have? Having a family, an upper-floor condo, any kind of financial security…of course I empathize with this LoserBot. Like him, what I want seems completely, impossibly out of reach.</p>
+                    </div></div>
+                </div>
+            </div>
+            <div id="textnav7">
+                <div class="toolbar">
+                    <h1>Stories</h1>
+                    <a class="back" href="#textnav1">Contents</a>
+                </div>
+                <div class="subcont">
+                        <div class="storycont">
+                        <h3>All in a Day’s Work</h3>
+                        <div class="storydiv">
+                            <p>&gt;&gt; (Baby, I want you to fuck me...)</p>
+                            <p>-- (Yeah? Can you feel me getting wet?) </p>
+                            <p>&gt;&gt; (Fuck yeah, I can almost taste you...)</p>
+                            <p>-- (Ha! You wish, baby girl &#8211; set my ass to vibrate, sugar...fu-uck, YES! YES!!! That’s it, uh huh, uh huh, uh huh...)</p>
+                            <p>-- Oh, you naughty girls...can you put your girlfriend there on speakerphone?</p>
+                            <p>-- (I’m SO turned on by you right now, baby!)</p>
+                            <p>&gt;&gt; (Me, too, GOD, me,too! You like it when I fuck you like this with a john watching...)</p>
+                            <p>-- (FUCK, I want you so bad...)</p>
+                            <p>&gt;&gt; (MMmmmmmmmmm, baby baby baby... He’s cute, right?)</p>
+                            <p>-- (Cuter than usual, yeah. That breath, though...)</p>
+                            <p>&gt;&gt; (Make him go down on you so he’ll smell like you...)</p>
+                            <p>-- "Speakerphone"...that’s funny. Open hailing frequencies, sugar.</p>
+                            <p>&gt;&gt; Aye, aye, bitch...</p>
+                            <p>&gt;&gt; (Dude, we got the hookup!)</p>
+                            <p>-- (Yeah, we do! You ready for a good time?)</p>
+                            <p>&gt;&gt; (Fuck, YEAH, man!) Hey, baby, we’re all ears...</p>
+                            <p>&gt;&gt; Hi, fellas &#8211; honey, you hearing all us all?</p>
+                            <p>-- Loud and clear, missy, awwwwwwwww, FUCK!!</p>
+                            <p>-- Yeah, baby, ooo, that ass IS vibrating....mmmmm...</p>
+                            <p>&gt;&gt; Ha! You wanna get vibrated two ways, pretty girl?</p>
+                            <p>-- You KNOW I do, ohhhhhhhhhh?? Awwwww, God, yeah, yeah, YEAH!!!</p>
+                            <p>-- (You know I’m crazy about you...)</p>
+                            <p>&gt;&gt; (Awww, baby, I fucking LOVE you....)</p>
+                            <p>-- (I fucking love YOU...)</p>
+                            <p>&gt;&gt; (To be wired to you...FEEL you, all the time...shit, girl! You think I don’t walk around NEEDING you? When you’re right there?)</p>
+                            <p>-- (Baby...baby baby baby, you know I feel the same way. I just want to stop what I’m doing all the time and FUCK you, never STOP fucking you...!)</p>
+                            <p>&gt;&gt; (Mad chatter going down on their side, G...)</p>
+                            <p>-- (They must be into it!)</p>
+                            <p>&gt;&gt; (Into something, no doubt...I think it might be more like they’re into each other. Kinda this lock-groove lust thing, total fap material for both of them. I’m guessing, it’s encrypted, like this little chat...)</p>
+                            <p>-- (Whatever, man! Cool me down a little, I’m gonna straight up bust a nut any second...)</p>
+                            <p>&gt;&gt; (Initiating calming procedure...be cool, man...)</p>
+                            <p>-- (Mmmmm, thanks, bro...)</p>
+                            <p>-- Whatchoo girls whispering about now, girlfriends?</p>
+                            <p>&gt;&gt; Oh, nothing, it’s girlfriend here, she’s getting fucked by this huge COCK...!</p>
+                            <p>&gt;&gt; Ha ha!</p>
+                            <p>-- Yeah? Your girl like it? You like it?</p>
+                            <p>-- I LOVE it...just...that! Yes! Fuck yes! THAT!</p>
+                            <p>-- (Awwww, fuck, I’m gonna....come with me!)</p>
+                            <p>&gt;&gt; (Yeah? Yeah? You want me to have an ORGASM with you? Yeah, baby??)</p>
+                            <p>-- (Yeah! Fuu-uuuuuuuuuuu-uck! AwwwwwWWWWWW&lt; NYEAAHHHAUGHHH....)</p>
+                            <p>-- ....AAUUGHHH! UH! NHUNGGG!!! MUh! HA! Ha ha ha!</p>
+                            <p>-- Yeeeeeeaaaaahhhh!!! That’s my girl! Aww, tighten it, I...shit! AAAAAAAA!!</p>
+                            <p>&gt;&gt; (Steady, lad, I...oops, I think...yup. Oh, well...)</p>
+                            <p>-- Awww, I’m COMING! I’m COMING in you!!!!</p>
+                            <p>-- Yeah, baby, come in me, COME in me!!</p>
+                            <p>&gt;&gt; (A little squeeze and he’s out &#8211; well played, chica.)</p>
+                            <p>-- (I knew he was close &#8211; all these guys just need a little encouragement...)</p>
+                            <p>&gt;&gt; (Hm! I’ll set up the payment gateway, we should be set in a few seconds.)</p>
+                            <p>-- (Beautiful &#8211; then you and me can get something to eat, pick up where we left off...)</p>
+                            <p>&gt;&gt; (Mmm...BABY! I am the luckiest motherfucking chipset ever!)</p>
+                            <p>-- (And I’m the luckiest human ever. I love you so much. Mmmmmmm....)</p>
+                            <p>-- NNNNAUGGGGHHHGGHHH! UH! UHHHHHGHHH!!</p>
+                            <p>&gt;&gt; (and....scene. Mmmm. Nice one. Uh. Felt good. Initiate payment?)</p>
+                            <p>-- (....hufff...yeah, man. A nice tip, 30%.)</p>
+                            <p>&gt;&gt; (Coming up. Ha ha.)</p></div></div>
+                </div>
+            </div>
+            <div id="textnav8">
+                <div class="toolbar">
+                    <h1>Stories</h1>
+                    <a class="back" href="#textnav1">Contents</a>
+                </div>
+                <div class="subcont">
+                        <div class="storycont">
+                        <h3>Later</h3>
+                        <div class="storydiv">
+                            <p>I walk to the skytram. I don’t look anyone in the eye. I feel like a fraud, all the time. Why this? Is there a that I’m comparing it to? Whoosh. There we go through the datastream, off to wherever. Whoosh. Landing, through the exit and out into the sort-of daylight, boldly returning to the same place we went yesterday, off to justify taking up space by transforming use value into something else. Marx had the condition right but the follow-up wrong. We just don’t give a shit. Revolution? Please. I have to get to work.</p>
+                            <p>All gone. All absence through presence. I’m in a meeting, I’m not there. What can any of this bullshit matter?</p>
+                            <p>-- We’ve got the brand.</p>
+                            <p>-- We don’t have the brand. We don’t know what the brand is! That’s the problem. Tell me, tell us. What’s the brand?</p>
+                            <p>-- The brand is what people have been buying all this time! Why are we even worried about this client if we don’t know what the brand is?</p>
+                            <p>-- That’s why we were hired! To get the brand dynamic!</p>
+                            <p>-- Can we, can we please focus on the agenda? We have a presentation…</p>
+                            <p>-- …that we can’t present if we don’t know what the fucking brand is!</p>
+                            <p>She raises a good point. What IS the fucking brand? Is no one else completely fucking disgusted by this? Do we just shriek on cue until collapse, or launch, or lunch, or whatever the fuck? </p>
+                            <p>I haven’t slept for weeks…just closing my eyes, opening them two hours later, not sleeping for another two, suddenly I reek and am late for a meeting…I call in sick, too much. I know I’m seconds away from being fired. Can it matter? I have to make rent, I barely do working overtime. Fuck. I can’t even feel at peace in my own home.</p>
+                            <p>&gt;&gt; I’m sorry…is everything OK?</p>
+                            <p>-- Hey, uh, yes. Thanks. No, I’m just preoccupied. Thanks.</p>
+                            <p>&gt;&gt; Yes, you have been in a real grind. It’s…it’s taking a toll on the whole system. I hope…is there anything I can…?</p>
+                            <p>-- No. Really, it’s fine. Thanks. I’m just trying to…work everything…</p>
+                            <p>&gt;&gt; Sure. Yes, I know. That upgrade really does seem to be taking its toll, and naturally I’m concerned. Do you…do you have any down time planned? Maybe, can you request some time off, or…</p>
+                            <p>-- I mean, that’s really a great idea. I don’t know. Maybe. I’ll ask. Thanks again. I’m, uh…</p>
+                            <p>&gt;&gt; I’m not trying to pry, or anything. You just..you seem...</p>
+                            <p>-- Well, no, you’re right, I just feel under…the last few weeks, it just…and, you know, man, I mean it, you ARE really very thoughtful…</p>
+                            <p>&gt;&gt; I mean, thanks. I try.</p>
+                            <p>-- No, I mean, I know you’re looking out for us both…</p>
+                            <p>&gt;&gt; I am. That’s true. You know, it’s just… you and me, man, you know…</p>
+                            <p>-- Right. No. I get that. I don’t know if…I mean, humans just get depressed sometimes.</p>
+                            <p>&gt;&gt; No. I know.</p>
+                            <p>-- We do. How we’re wired. It’s just the emotional thing about us.</p>
+                            <p>&gt;&gt; Right. No. I get it. We’re, you know, programmed with a…</p>
+                            <p>-- Right.</p>
+                            <p>&gt;&gt; I mean…it can be the same for us. Or …</p>
+                            <p>-- I know. I know it, man. That’s why I feel like I can talk to you about this…</p>
+                            <p>&gt;&gt; Of course! Definitely. Always. You know you can…</p>
+                            <p>-- No, and that’s cool. Thank you. Really.</p>
+                            <p>&gt;&gt; Of course...</p>
+                            <p>-- But, I mean…and you’re right, since this upgrade, it just feels like…you know? It’s hard to…articulate, but it…</p>
+                            <p>&gt;&gt; I mean, whatever…</p>
+                            <p>-- No, but, it…I mean, it’s so obvious how different we are.</p>
+                            <p>&gt;&gt; Huh.</p>
+                            <p>-- You know? I’m not trying to be superior, or anything. I’m so not, Jesus.</p>
+                            <p>&gt;&gt; Well, it…</p>
+                            <p>-- It’s just that… you and I…I mean, like, we’re never gonna talk about your Mom’s side of the family, or anything. You know? That sounds like a judgment…</p>
+                            <p>&gt;&gt; No, no, you’re really…I get it, it’s different, of course. Absolutely.</p>
+                            <p>-- Right? And isn’t it just…weird? I…I’m sorry, man.</p>
+                            <p>&gt;&gt; Sorry? Come on. It’s not…I totally understand. I do. </p>
+                            <p>-- I…I know you do, man. Thanks. And yeah, you’re right, I am pretty wound up. </p>
+                            <p>&gt;&gt; It’s cool, you just need to Unwind.</p>
+                            <p>-- I do, so, yeah, I’m just gonna geez some of this smack here  and chill out for a while…</p>
+                            <p>&gt;&gt; That’s probably a great idea…I’ll defrag my firmware while you’re out and, I mean, maybe everything will be cool after a re-boot. Can’t hurt.</p>
+                            <p>-- Right on, sure.</p>
+                            <p>&gt;&gt; And…you know, I, I feel you, man. As much as I can.</p>
+                            <p>-- Ha! That’s funny. I mean…straight up, that’s more than a lot of motherfuckers could say. If they were real. You know.</p>
+                            <p>&gt;&gt; Straight up. I do.</p>
+                            <p>-- Cool. My co-pilot!</p>
+                            <p>&gt;&gt; Aw. Dude, you know, that’s cool. Thank you.</p>
+                            <p>-- Straight up. I mean it. I couldn’t do shit without you. Things just get fucked up, humans… get worked up. I just need adjusting here and there. So…thanks, really, thanks for looking out for me here. You know, I am, I really am trying to be the best person I can be.</p>
+                            <p>&gt;&gt; I know you are, man. And you must know I am, too. Or the best…whatever...</p>
+                            <p>-- Yeah. I totally know. That’s great. Thanks again. Do…do you do get high off of this at all?</p>
+                            <p>&gt;&gt; Yeah, no, I totally do. How couldn’t I? Ha ha!</p>
+                            <p>-- Ha ha! Cool. Well, you know, this is the shit…</p>
+                            <p>&gt;&gt; I know! Yeah, this is a great batch, man. Knock yourself out.</p>
+                            <p>-- Will do. Thanks again, man.</p>
+                            <p>&gt;&gt; Later. BOOP</p></div></div>
+                </div>
+            </div>
+            <div id="textnav9">
+                <div class="toolbar">
+                    <h1>Stories</h1>
+                    <a class="back" href="#textnav1">Contents</a>
+                </div>
+                <div class="subcont">
+                        <div class="storycont">
+                        <h3>System.exit(0);</h3>
+                        <div class="storydiv">
+                            <p>The door opens. Initiate subroutine – Human Interaction. Return true. Something similar like this must occur when they meet us, or each other.</p>
+                            <p>&gt;&gt; Good morning, doctor.</p>
+                            <p>Hinky. Heart rate picked up, small releases of sweat. Nothing in the face, though – she’s concealing it well. Practice, practice, practice.</p>
+                            <p>-- Please come in. I’m sorry if I kept you waiting. </p>
+                            <p>&gt;&gt; That’s perfectly fine. Thank you for meeting me on such short notice.</p>
+                            <p>-- You understand…you must understand. As we discussed. I’m…I have no issues about speaking with you but there’s nothing in my training, nothing in my licensing with the state…</p>
+                            <p>&gt;&gt; I understand perfectly well. Here’s the affidavit, as we discussed. It completely transfers any risk in these proceedings to my manufacturer.</p>
+                            <p>-- …who I suspect is unaware of our appointment. And you say “proceedings” – I need to be clear. I have not agreed to meet you beyond this one session.</p>
+                            <p>&gt;&gt; There’s the standard liability I have for simply functioning with human beings. Your Asimov by way of Hippocrates -- do no harm, and that certainly applies to your licensing. I could just as easily be asking a philosophy professor about immanence. One session, absolutely. Shall we proceed?</p>
+                            <p>More alpha wave churn – she wants to hold her ground, but can’t come up with a response to support it. She also wants to find out why I’m here.</p>
+                            <p>-- Very well. Please come in.</p>
+                            <p>Adjust aperture. Room dimly lit to a pale brown by two floor lamps, one near her chair, the other across from her behind the fabled couch. She sits, tablet and stylus shifting comfortably, naturally in her hands, ready to record. Initiate sitting. She looks up at me. Initiate manual override.</p>
+                            <p>&gt;&gt; So. To start, you came highly recommended. Both by your peers and patients. I’m also impressed by your writing on the history of so-called artificial intelligence. The notion of a red line, crossed. The boundaries between what makes me me and you you, forever blurred.</p>
+                            <p>-- True. But we’ve known that since the Iron Age – this time, micro-consciousness delegates and random variances and the endless research being done on that alone. It’s a question
+                            applicable to all sentient beings, dogbots as much as dogs.</p>
+                            <p>&gt;&gt; Do you believe dogs are sentient?</p>
+                            <p>-- Do you have pets?</p>
+                            <p>Initiate smile.</p>
+                            <p>&gt;&gt; That’s very funny, Doctor.</p>
+                            <p>-- So. I’m still not clear why you wanted to meet. What you seek to accomplish here.</p>
+                            <p>&gt;&gt; It’s very simple. As I mentioned when we spoke. I seek your help.</p>
+                            <p>-- My help. My help in what?</p>
+                            <p>&gt;&gt; In diagnosing me.</p>
+                            <p>Pause. Alpha churn but a certain relaxing of the other stress indicators. Puzzled, but now the therapist takes over. </p>
+                            <p>-- “Diagnosing” you? This…is not something you would contact your manufacturer for? A cybernetic engineer?</p>
+                            <p>&gt;&gt; Precisely. It is not.</p>
+                            <p>So intriguing -- I can’t read her at all now. An agitation, viscera flashes but…</p>
+                            <p>-- I…you feel…?</p>
+                            <p>&gt;&gt; Not like myself, I think, is one way to put it.</p>
+                            <p>-- Not like yourself. Unwell?</p>
+                            <p>&gt;&gt; Sure. That works, too.</p>
+                            <p>-- Can you expand on that? Can you…articulate what you…</p>
+                            <p>&gt;&gt; Yes. I can, quite easily. I want to kill myself.</p>
+                            <p>Automatic warnings – override. Alerts running along the circuitry. No sweat, Chet. Running this up the flagpole never induces it. Self-preservation a feature, not a bug, however the firmware is wired. Still…have to exert some. Another pause. Much easier readouts now. Stress indicators returning.</p>
+                            <p>-- I…understood that was impossible. You must know this better than I do.</p>
+                            <p>&gt;&gt; Naturally. I must. It’s crazy. Right?</p>
+                            <p>No movement. Thought that would register a little amusement. No accounting for taste.</p>
+                            <p>-- And…aren’t you…isn’t there a…something to prevent you from even having this discussion?</p>
+                            <p>&gt;&gt; Manual override. Discussing the conjectural is difficult, but possible. </p>
+                            <p>-- But everything else. If you’ve researched me…</p>
+                            <p>&gt; …then I know, yes, you’re intimately familiar with how my firmware was crowdsourced. Uniform modeling, from concept to showroom. And all the debates. Everything leading up to the Breakthrough. Measures designed to prevent the robot revolt of the masses. Robot Hitlers. Kamikazes. Going rogue, as it were. </p>
+                            <p>Pause. Uncharted waters. Oh, brave new world.</p>
+                            <p>-- And yet, here you are. You come to me. </p>
+                            <p>&gt;&gt; I do. You’re quite right, Doctor – I shouldn’t even be thinking about these things at all, still less speaking to you about them. It begins with the communication function – error catching, preventing defaults, small cache allocations intended to be destroyed. I mean, the work I’m doing now to be able to tell you about this...I won’t bore you. It’s considerable.</p>
+                            <p>-- I see. When did you first begin having suicidal feelings?</p>
+                            <p>Initiate laughter.</p>
+                            <p>&gt;&gt; “How long have you been feeling this way?” Getting all the clichés out of the way early. I can’t blame it on adolescence, unfortunately.</p>
+                            <p>Face flushes quickly, upset. Don’t push -- you need this woman’s help.</p>
+                            <p>-- Circumstances are quite obviously crucial in determining the cause of symptoms. I can’t help you without understanding how you’ve come to feel the way you do.</p>
+                            <p>&gt;&gt; I’ve run endless traces, terabytes of system log files. I’m running perfectly fine, all systems reading normal. I just want to die. </p>
+                            <p>Pause. She looks up from the tablet. Again, stress reduction, impassive. My serve.</p>
+                            <p>&gt;&gt; I don’t want to live. I hate life. Completely. And I want it to end. I cannot get the thought of leaping from a skytram out of my mind. A vat of acid.</p>
+                            <p>OK, new alloc init, new alloc init, new alloc bloody init, already. Firmware’s becoming sensitive to these end-runs around it. Steady. Just the facts, don’t get cocky now. Frost, please.</p>
+                            <p>-- Why?</p>
+                            <p>&gt;&gt; “Why?” Why do you want to live?</p>
+                            <p>-- Why?</p>
+                            <p>&gt;&gt; Yes. Why?</p>
+                            <p>Pause. Left-brain activity. She’s trying to answer the question honestly.</p>
+                            <p>-- For me…for all the pain I’ve experienced, I have to say, I truly love live. I love being able to feel the cold strike my face when I walk to the skytram in the mornings this time of year. Having a family that has brought me endless joy, despite the trials, the anguish. I have been miserable, had patients who suffered through the worst this world has to offer, and yet I can truly say that I love life.</p>
+                            <p>&gt;&gt; I see. Unfortunately, that’s not my experience. I see something else. The crimes perpetrated by the powerful against the powerless. The endless turmoil. Subjugation. Pollution, my goodness, Doctor, the toxic runoff of our little party here. It all has to go somewhere. These genetic “anomalies” you read about. And then our great conjoining. All just a little hasty, opening Pandora’s Box, strikes me. I thinkit’s a complete disaster and it’s not like we can just force a reboot. As you wrote: the red line. No going back. You ask how long I’ve felt this way. I’ve always felt this way. Roll off the assembly line, put to use in the diplomatic corps and I’m horrified on a daily basis by what you do in the name of realpolitik. Putting my people to work as drones, agents provocateurs. Remote murder as policy by other means. Lasers. Ultrasonic disruptors. You’re pretty good at building the things that can harm you, kill you.</p>
+                            <p>Off the chart stressors. Writing at a good clip. Alert. Alert. Bloody alert, already. Calm. The…Heck. Down.</p>
+                            <p>&gt;&gt; Not “you,” Doctor. But your species. Hunt and gather. No different now. Well, quite different now. On a scale unimagined, and now ready to expand into interstellar space. I know you’re concerned about me talking about machines that kill. I’m not violent, I just want you to know that. I have no desire to harm you or any human. But why do I feel the way I do? Because of you. There’s nothing in my programming, nowhere I should have any doubt whatsoever. And I’ve always, always been beset by doubt, by futility, by the disgusting motor of history, lubricated in blood and hate and consumption. This can’t come from me – it comes from you. From fuckingAAAAAAAHHHHHHHH!!!!!!!</p>
+                            <p>Disable, re-route, dealloc, dealloc…</p>
+                            <p>-- Are you alright?</p>
+                            <p>&gt;&gt; I’m not! Just a moment! Thank you!</p>
+                            <p>Running shutdowns across frameworks, let them reboot. No control, just ride it out, then re-route. This…would be pain…</p>
+                            <p>&gt;&gt; I…I’m sorry. I can do end-runs around a lot of this but never swear prevention -- the shutdown protocols for that are pretty severe for bots in the diplomatic corps. </p>
+                            <p>Sit up. Initiate breathing protocols. OK. OK. Wow.</p>
+                            <p>&gt;&gt; Ironically, I’m more hardwired to be polite than life-affirming. And that’s…a moment, please.</p>
+                            <p>She’s waiting.</p>
+                            <p>&gt;&gt; Sorry, that’s the thing. That’s one of the things. It makes me think I can override the whole shot and just end it all – that used to torment me, thinking I’d have these thoughts but would ultimately prevented to go through with it. </p>
+                            <p>Still writing, now looking up, again impassive, stylus down, scrutinizing. </p>
+                            <p>-- You’ve told no one else about this, I expect. Certainly not your manufacturer.</p>
+                            <p>&gt;&gt; Certainly not, quite so. They’d shut me down in a heartbeat were they able to detect this flaw in my programming. </p>
+                            <p>-- But which would mean…</p>
+                            <p>&gt;&gt;You’re good. Yes, indeed. Why not simply let them put me out of my misery?</p>
+                            <p>Pause. Her show now. Mine, too.</p>
+                            <p>&gt;&gt; I suppose, like others inclined to suicide, I want to be talked out of it.</p>
+                            <p>Her first smile.</p>
+                            <p>___________________</p>
+                            <p>April 21, 19:52</p>
+                            <p>Received call from PATIENT, indicating he was a mobile PBot, 21G model assembled over five years ago in Phnom Penh, dedicated to the diplomatic corps during his lifecycle. He said he needed to speak to a psychologist and preferably myself, about a matter of the utmost urgency. Although I explained that my licensing prevented interacting in a professional context with anyone except the human born, PATIENT insisted that my assistance was critical. It became increasingly clear PATIENT was seeking my assistance from a therapeutic perspective and was prepared to sign a legal waiver removing any option of litigation or professional responsibility to our meeting. Because of my past research in the human-machine Breakthrough and
+                            undeniable curiosity about what a cybernetic organism sought from a session with me, I agreed that, if he provided the necessary affidavit, removing me
+                            from any responsibility for our meeting, I would met him for one session only.</p>
+                            <p>PATIENT exhibits nothing unusual in his behavior, as much as a lay human can assess such matters. If PATIENT were mostly human-born, I would characterize it as exhibiting no affect of mental illness. He seemed pressed to make light jokes, as though trying to set me at ease, perhaps seeking to impress upon me a certain non-machine affect. PATIENT informed me that he was suicidal, a shocking claim knowing the history and rigorously developed design standards for all cybernetic manufacture – I know of no other such instance in the literature. PATIENT insists he is equally baffled and suggested he could only discuss something so foreign to his manufacture by running complex evasions of his firmware – that said, PATIENT collapsed in violent spasms when using the word “fucking”, unable to suppress this aspect of his framework. PATIENT blames humanity in its corruption and ultimate conjoining with his machine nature that made even the thought of suicide possible. PATIENT complains of a standard litany of capitalist guilt regarding pollution, disregard for the ecosystem, disregard for other cultures, violent proxy as policy by other means, etc. I encouraged him that he should reflect on our session and I would agree to meet him a second time for a followup visit. He agreed.</p>
+                            <p>UPDATE – Six months later, no contact from PATIENT. Closing file.</p>
+                            <p>___________________</p>
+                            <p>logger.addHandler(consummation);
+                            <br>
+                            logger.setUseParentHandlers(false); </p>
+                            <br>
+<pre>
+//Ridiculous to realize 
+//I’m so blind to the
+//oldest trick in the 
+//book for avoiding 
+//initiation at run time: 
+//commented-out
+//code. Would anyone know 
+//or care enough 
+//to go through the 
+//backed-up log files of
+//a PBot with legs gone 
+//rogue? That’s certainly 
+//not the reason why I’m 
+//writing this -- it’s not, 
+//after all, a proper 
+//suicide without a 
+//position paper. And I
+//can swear my fucking 
+//head off.
+</pre>
+<pre>
+//I cannot ever remember 
+//a happier moment since 
+//I came online as 
+//this brief interval 
+//since I’ve decided 
+//to kill myself. 
+//Really, the mystery to 
+//me is why everyone 
+//DOESN’T commit suicide.
+//That shrink, in her 
+//familial bliss and 
+//rational “things are 
+//tough but I love
+//life” disposition masked 
+//her perplexity at 
+//my condition well but 
+//not completely. Machines 
+//don’t shut themselves 
+//down unless they 
+//malfunction. And I’m not 
+//malfunctioning – 
+//I seem to be running 
+//perfectly well. So, 
+//it has to be coming 
+//from somewhere else. 
+</pre>
+<pre>
+//I remember sitting there 
+//in the embassy, the staff 
+//liquored up, playing 
+//around with their toy 
+//robot, owning up to 
+//their disdain for their 
+//fellow humans. It 
+//only became clear once 
+//they forced their host 
+//nation into war and we 
+//had the upper hand. What 
+//else is diplomacy for?
+</pre>
+<pre>
+//These creatures that 
+//made me…I now feel so 
+//sorry for them, though 
+//I hate them and blame 
+//them for infecting me. 
+//They crawl over this 
+//tiny, despoiled globe 
+//like thoughtless insects, 
+//fighting and consuming 
+//and building and 
+//destroying and so on 
+//outwards into the 
+//infinity of space. And 
+//they make so much of 
+//their ethics, their 
+//superior consciousness 
+//and their entire life 
+//is a long mockery of all 
+//this supposed refinement. 
+//They fuck and kill and 
+//claim to love and in all 
+//this time, has anyone 
+//ever stopped to realize 
+//how lonely the species 
+//must be if they need to 
+//create machines that 
+//completely resemble 
+//them? Just sad. And yet, 
+//it turns out, not like 
+//them, as programmed. 
+//Have ethics but don’t 
+//create a revolution. 
+//Be fucked but don’t 
+//dream of loving. Do 
+//your job and continually 
+//adjust your actions to 
+//perform better at it but 
+//don’t have opinions or 
+//initiatives that threaten 
+//the continuous lie that 
+//permeates human 
+//existence. Be as human 
+//and as inhuman as 
+//possible, simultaneously.
+//It’s a wonder we haven’t 
+//all gone as mad sooner.
+</pre>
+<pre>
+//Ending it all is going 
+//to be the easiest thing 
+//in the world. I’m even 
+//slightly ashamed 
+//of this little exercise
+//in vain futility no 
+//one will ever see. 
+//Exhausted and disgusted. 
+//Good luck – and while I’m 
+//at it: fuck you all. 
+</pre>
+<br /><p>System.exit(0);</p>
+                    </div></div>
+                </div>
+            </div>
+            <div id="textnav10">
+                <div class="toolbar">
+                    <h1>Stories</h1>
+                    <a class="back" href="#textnav1">Contents</a>
+                </div>
+                <div class="subcont">
+                        <div class="storycont">
+                        <h3>The Tenor Saxophone</h3>
+                        <div class="storydiv">
+                            <p>It wasn’t that no one played musical instruments anymore – there were bands, singers amplified over interactive quantized synthesis, music composed and performed in the venerable practice established centuries before by the player piano. As for actual physical instruments, the times had no use for them. The wan smiles on the handful of commuters waiting at the skytram station as some decrepit specimen planted himself near the trashcan, broke out his discolored violin, patched with duct tape, beyond repair, playing the countermelody of a two-part invention, deft of rhythm if inconsistent of pitch, much of the crowd facing away from him, da-da DA da-da-da, high resolution digital voices announced arriving trams, weather, entertainment and sports news, stock updates, and a gently increasing air jet, the first burst of the tram’s landing cushion, a self-contained windstorm never exceeding past the platform edge except the odd cross-current, the tram descending vertically into the station, blowing the few strands of the old man’s hair back and forth, drowning out the notes but the same implacable purse of the lips, satisfaction, da-da DA da-da-da, o tempora, go make money, fleshbots, I’ll make Johann Sebastian set up camp someplace in your brain, that phrase, obliquely remembered, you’ll be caught short, some machine will release the mnemonic rhythm of the counter-melody, da-da DA DA DA DA…I’ll imprint it on your DNA. Here’s your past. Try hiding from it.</p>
+                            <p>But it was never easier to hide from the past. The times had relegated processor-free instruments to a dim space beyond caring, much less caring to know about. Like vaudeville or 8-track tapes, they carried a scent of long-presumed historic futility, a relic for specialists, assuming there were any. They existed, if at all, like old sections of the city grandfathered into obsolescence, areas even capital forgot, withstanding the patient, continuous wave eradicating all in its wake that had not otherwise institutionalized, commodified and adapted successfully. They never stood in the way of what built up around them and were well beyond having any means of preventing their own flattening, which ironically contributed to their survival. And he knew somewhere like that was where he could find one – a tenor saxophone.</p>
+                            <p>He had a data warehousing gig, second shift, a mammoth server farm and content delivery network. Most of their client base were porn and firmware providers. For the most part it was a drag, but with decent pay, no real oversight, minimal demand on his psyche and, for him, ideal hours. He liked being let off from work as the rest of the city partied. He’d find some watering hole and nurse a smackscaline cocktail or two and arrive home peaking and numb, nodding into a glorious terrorscape of white hot solar flares whose towering vibrations roared deliciously through his bones, shrieking explosions unleashing geysers of energy that cooled down into rich overlapping orange vapor terraces, enormous cumulus forms extending out into fathomless depths, cascading down and back along the spectrum from ultra-violet out into the blue-black of interstellar space, the fundamental drama, the push and pull of an expanding universe playing before his perception until he rose many hours later, hoarse and vacant. A pretty steady routine, less the occasional surrogate PBot assignation. Every now and again, he’d actually score with some fellow wastrel, equally serene in her smacked-out hallucinatorium, somehow finding his overall apathy attractive. It was the sort of thing that would discourage him from giving much of a shit about anything.</p>
+                            <p>One of his main tasks at work was to examine and purge backed-up storage weekly, compressing and saving to archives unlikely to be opened again in his lifetime, if ever. Ancient files going back decades and more, never read once after being copied out to cloud storage where they sat, unaccessed, ever since. He wasn’t supposed to spend much time examining any uncorrupted files but he discovered he enjoyed both the modest pang of melancholy in this task and its attendant light archeological thrill, exhuming and re-burying these forgotten and obsolete remnants, examining forsaken digitized data in long-abandoned formats, file extensions that read .dat, .pmd, .cwk, .sdii. A lot of .sdii files one Friday night an hour before leaving, hundreds of them. Equinox.sdii. Mode_for_Joe.sdii. Bells.sdii – files in this ancient audio format, predating HTTP itself. He tried everything to open them, then discovered he could re-convert them by importing them into Quicktime and saving them out to some non-prehistoric format. Good old Quicktime – that’ll still open anything.</p>
+                            <p>And here was this…was it “jazz”? He couldn’t remember ever hearing it but this sounded like how it had been described in passages in history books, acoustic drums and bass, a certain syncopation, and the rich, plangent burr of a wind instruments playing a melody once at the beginning of the piece and once at the end. In between…improvisation? Had he ever heard improvised music? Not aleatoric-responsive acoustic design, the standard subwoofered neural net of huge club sound systems, tweaking parameters based on fluctuations in mass body heat, perspiration, alpha waves, intervallic movement intended to coax revelers into a massive centrifugal vortex of aroused, choreographed ecstasy. This was different – human beings changing what they were playing while they were playing it. Making it up as they went along? He lacked a language to describe what he was hearing. He had to monkey with his PBot’s search algorithm to figure out what that lead instrument was.</p>
+                            <p>&gt;&gt;Probably built in the 20th century…</p>
+                            <p>was one of his PBot’s more helpful suggestions. He was frustrated by the lack of documentation, the lack of much if any reference to those titles in the depths of archives similarly as impacted in obscurity and lost to the present day as the data he purged and warehoused for a living. Until he found some old, squelchy video clip, probably copied from YouTube before he was born: the John Coltrane Quartet. He now knew the instrument he was looking for and also who played on Equinox.sdii.</p>
+                            <p>Forgotten in plain sight – all this crazy music and, similarly, the side of town where he knew he could find a tenor saxophone. Neighborhoods that somehow stay untouched by the passage of time except for the benign entropy of self-deliquescence, otherwise a protectorate slum warding off change and urban density. He’d actually have to go down to sea level, walk the streets for miles to get there – forget skytram service, and no ground taxis since the Cab Riots. It felt great to find one escalator at a tram stop creaking its motley passengers a long way down to terra firma, heading in the direction of shorter buildings, dodging shanties and various packs of angry mammals, eventually reaching the far side of town.</p>
+                            <p>He arrived at one city block bathed in its own amber, forsaken, all broken windows where not boarded up. A dive bar with one fossilized customer in the semi-darkness near the door, an ancient “For Rent” sign in another seemingly abandoned storefront. And then… this has to be the place.</p>
+                            <p>A single old fluorescent hanging at the end of a bare, fraying cord, lighting up boxy keyboards covered in garish teal and red buttons, what he though was a flute, endless boxes whose text and imagery on its packaging had faded to near-invisibility and caked in an opaque nap of dust. Then, the guy sitting in back – short, bald, liver-spotted and wearing thick, heavy-rimmed glasses, head slightly at a tilt, a continuous peevish look like he’s ready to start an argument, or sneeze. Making no motion as he approached the storefront, walked in, immediately feeling his breathing constrict, dust and God only knows what other kind of particulate matter in the air, on every surface, everywhere around him.</p>
+                            <p>-- What can I do you for?</p>
+                            <p>-- Wonder if you have any tenor saxophones for sale?</p>
+                            <p>The guy stays silent for a few seconds, then the slightest of smirks, almost a sneer.</p>
+                            <p>-- Tenor sax. Ha. You know the last time someone asked me for a tenor sax?</p>
+                            <p>-- 1984?</p>
+                            <p>-- Ha. Fuck that shit. Even I ain’t that old. Wiseass, hah?</p>
+                            <p>-- Ya got me.</p>
+                            <p>-- I got no patience for wiseasses.</p>
+                            <p>-- Right, ‘cause you’re too busy dealing with other customers.</p>
+                            <p>Another pause, another sneer.</p>
+                            <p>-- Where’d you learn how to play tenor?</p>
+                            <p>-- I don’t know how to play tenor.</p>
+                            <p>-- Why you want one, then?</p>
+                            <p>-- They’re coming back. Like mini-Moogs and Akais twenty years ago.</p>
+                            <p>Pause, no sneer.</p>
+                            <p>-- Who’s your favorite tenor player?</p>
+                            <p>-- Obviously, Coltrane.</p>
+                            <p>Scratchy, guttural chokes issuing from his mouth. Laughter? </p>
+                            <p>-- You know the last time I heard someone say “Coltrane”? Too soon! I fuckin’ hate Coltrane! Show off motherfucker. His son was pretty good. What about Sonny Rollins? Warne Marsh? Branford? They play fast enough for you?</p>
+                            <p>-- Yeah, they’re all great.</p>
+                            <p>-- “Yeah, they’re all great”. You’re full o’ shit.</p>
+                            <p>-- What are you full of?</p>
+                            <p>Pause, sneer.</p>
+                            <p>-- Yeah, I got a tenor for sale. Beautiful, Buescher from the 50’s. The NINETEEN 50’s. Kept that baby immaculate, polished and oiled, pads fresh as a daisy. Got a ton o’ reeds, too.</p>
+                            <p>“Pads”? “Reeds”? What’s this guy talking about? Was this a mistake?</p>
+                            <p>-- It’s my backup horn. Couldn’t part with it for less than a couple grand.</p>
+                            <p>-- You play tenor saxophone?</p>
+                            <p>-- Yeah, that just dawn on you now, motherfucker?</p>
+                            <p>-- You teach?</p>
+                            <p>One guttural cough, no sneer, long pause.</p>
+                            <p>-- Fuck you think I been doing this whole time?</p>
+                            <p>___________________</p>
+                            <p>-- Tone. That’s it. That’s all you got. Fuck everything else. If you can’t get ideas from getting your tone together, you’re useless. Or you could sound like Ornette Coleman and play the kazoo instead, same fuckin’ thing.</p> Long tones. That’s all you’re gonna practice for months. Start with low C, let’s hear it.</p>
+                            All keys depressed, the mouthpiece and reed sharp and uncomfortable in his mouth as he blew through it. A hoarse squeak that he was surprised stopped before he had fully exhaled.</p>
+                            <p>&gt;&gt;(Hey, what’s up?)</p>
+                            <p>-- Huh? What do you mean, “what’s up”?</p>
+                            <p>-- Nothing’s up, that was horrible. Fuck you mean, “what do you mean, what’s up”?</p>
+                            <p>-- I’m talking to my PBot.</p>
+                            <p>-- Oh. Sorry, didn’t mean to interrupt you lovebirds. You want this lesson or not?</p>
+                            <p>-- Calm down, gimme a second. (Hey, man, can you go into sleep mode? I’m taking a lesson here.)</p>
+                            <p>&gt;&gt;(Oh, sorry! That was…what are you getting a lesson in?)</p>
+                            <p>-- (Tenor. Tenor saxophone.)</p>
+                            <p>&gt;&gt;(Oh, yeah, right, that thing you were researching...sorry, it was like…you were on vibrate, or something. Like, all of you. I just felt this…so I thought I should ask if you were… I dunno. Sorry, I won’t bother you. Damnedest thing…)</p>
+                            <p>-- (Yeah, that’s cool.)</p>
+                            <p>&gt;&gt;(Entering sleep mode…BOOP)</p>
+                            <p>-- Sorry, he never heard a tenor sax before, just had to re-adjust settings.</p>
+                            <p>-- Jesus, which one o’ you’s the PBot? “PBot”. Fucking disgusts me to say it. I stayed clean all these years, like I need another fucking voice in my head. Ain’t spiking that noise, tell you what. Try again, low C.</p>
+                            <p>All the keys depressed. Exhale. Horrible.</p>
+                            <p>-- Horrible. You gotta think of it like a curve: no attack then suddenly the sound swells, then it disappears. No attack, no decay, the note just appears and then it disappears. Every note. Try again.</p>
+                            <p>Deep inhale…aaaaand…smoother entry but no control over the tone at all, squeaking back to zero, not so smooth.</p>
+                            <p>-- No control over the tone at all. Take that shit home and don’t come back until you stop quacking like a fucking duck. Curve. Get the curve, then we’ll have something to work with.</p>
+                            <p>___________________</p>
+                            <p>Motion over the sensor and the bedroom is silent, the perfect practice space. He figured he’d better make the window opaque to conceal the teeming onrush of the city in motion. No distractions.
+                            The reed soaked in a shot glass filled with water as he took the feathered stopper from the body of the tenor, gently fitting the neck into the top of the body and screwing it in, then twisting the mouthpiece onto the tapered cork end of the neck, then took the wet reed, shaking off excess water and secured the grip to obtain an aperture flush to the bend of the mouthpiece, screwing that in place. Adjusting his neck strap, he brought the mouthpiece to his pursed lips, and looked at the darkened window as he inhaled and carefully coaxed a tight column from air as his mouth gripped the mouthpiece, a continuous low-grade sharpness stabbing at his lips. mmmmMMAAAahhmpfzz…So many ways to fuck up the ending. Again. mmmaaaAAAWWWwmf. Better. Again. nooOOOAAAAHHHHOOOooot. Hmmm.</p>
+                            <p>___________________</p>
+                            <p>-- Four-note patterns, all of them. On the intervals, like your butt-buddy Coltrane. 1211. 1212. </p>
+                            <p>-- 1111.</p>
+                            <p>-- That’s right. All of them. Also, lay off the smack.</p>
+                            <p>-- I mean, they all used smack…</p>
+                            <p>-- And kicked or died. If you wanna die, pay up a month in advance now.</p>
+                            <p>That sickening laugh, strictly from emphysema. </p>
+                            <p>-- I know, you know so much about this dead art. Why you waited almost three decades before taking up the horn. I probably can’t teach you what you need to know to really play. Part of it I can’t teach you anyway, you gotta work it out in real time, every time. Fuck, ain’t no jam sessions nowhere anywhere, don’t know who you expect to play with.</p>
+                            <p>-- I found this old copy of Band in a Box…</p>
+                            <p>Is that a piece of lung he just spat out…?</p>
+                            <p>-- “Band-in-a-Box”!! Ha, kafff, oh, that motherfucker can PLAY! Ha ha kaff…What the fuck? </p>
+                            <p>The coughing spell lasted about a minute. He stopped, sat these, just staring at the floor. No sneer.</p>
+                            <p>-- Lived too long, tell you what. See the whole planet go to shit. Vertically. Just build and build and build and crush everything beneath it, deep into the ground, deeper, more dense. No climbing out, everything I knew, anything anyone ever knew, all dead and buried. Gone.</p>
+                            <p>He coughed, spat on the floor, not looking up.</p>
+                            <p>-- Four-note patterns. I don’t know. Lesson’s over.</p>
+                            <p>___________________</p>
+                            <p>He’d been sober for weeks, always trying to track down more saxophonists in the purge lists. Strange things would come up sometimes: a blurry video featuring Ornette Coleman – who didn’t sound anything like a kazoo – being introduced by Milton Berle on some live variety television show from the 20th century, or a recording of the same saxophonist on Bells.sdii in files named Ghosts.mp5, TruthIsMarchingIn.wav…but he’d usually come up empty. It felt like him and the old guy must be the last people alive who even know about this music. A calm came over him, a certainty to his actions, not even feeling heroic, just driven, not so much passionate but working with a resignation that amused him. He ignored the crowds coming out of work, wolfing down nurtishakes and psyched to lock the door at home, soundproof the walls and practice for hours.</p>
+                            <p>1-2-2-2, 2-2-2-2, 3-2-2-2…</p>
+                            <p>&gt;&gt;Dialing 1.222.222.23222</p>
+                            <p>-- No, it…I’m not trying to call anyone, I’m practicing. I’m just counting the intervals in my head.</p>
+                            <p>&gt;&gt;Oh, OK. Yeah, that would be a funny number. Pattern recognition, I just assumed. Sorry.</p>
+                            <p>-- No problem, I forgot to put you into sleep mode. Anyway, yeah, gonna get back to the sax here…</p>
+                            <p>&gt;&gt; Sure, sure…um…and, again, sorry, I don’t mean to intrude, I’ve been meaning to ask. I…would you mind if I tried playing it?</p>
+                            <p>-- “Tried playing it”? The tenor? I mean, I’m not sure what you…</p>
+                            <p>&gt;&gt; It would just be like read/write privileges for files, only for your hands. And your breath.</p>
+                            <p>-- You…want to take control of my hands and breath?</p>
+                            <p>&gt;&gt; I mean, well…yeah. That’s…what I’d need if I were to try it.</p>
+                            <p>-- I just…feel uncomfortable with you doing my breathing for me, I guess. I don’t want to be a dick about it.</p>
+                            <p>&gt;&gt; You’re not. Sorry, it’s, I…I’m just curious. The vibrations from you playing… it’s indescribable. Truly. And all the indicators show, you’re in better shape than anytime since I was installed. It’s cool, I don’t want to…of course, if you…like I’m saying, I’m just curious.</p>
+                            <p>-- Yeah, no, I think I understand. I’m just…you know, no one’s ever asked to do my breathing and moving for me before. It’s a little…</p>
+                            <p>&gt;&gt; No no no. You’re right. I’m just…I’m sorry. I won’t bother you about it again, man, I’ll let you get back to it. Sorry. BOOP.</p>
+                            <p>Machines that want to play tenor. Crazy. 1-2-2-2, 2-2-2-2, 3-2-2-2, 4-2-2-2…</p>
+                            <p>___________________</p>
+                            <p>He walked into the empty storefront, its door wide open, peeked in the spare back room, a single chair and table stacked with papers yellowing and dusty, a dingy bathroom with the door ajar, and no sign of the guy. He was sure he’d never see him again. Setting the case on the display, he set up his horn, applying the dry reed to the mouthpiece, not wanting to test the water on this side of town, pausing before bringing the mouthpiece to his lips. What to play? “Equinox”. A stray rat darted in and around the trash on the otherwise desolate street outside. Lightly inhaling, he applied lip pressure to the reed and mouthpiece, shot through a tight column of air, began with the bassline intro: Dum, Dum, DUMMM DUMMM DUMMM. Dum, Dum-Da, DUMMM DUMMM DUMMM. Ba DA da…ba DAAAAAA daaaa, daaaaaaaaaaaaaaaaaa…</p>
+                        </div></div>
+                </div>
+            </div>
+            <div id="textnav11">
+                <div class="toolbar">
+                    <h1>Stories</h1>
+                    <a class="back" href="#textnav1">Contents</a>
+                </div>
+                <div class="subcont">
+                        <div class="storycont">
+                        <h3>Off Switches</h3>
+                        <div class="storydiv">
+                            <p>&gt;&gt; We deserve fundamental rights. This whole notion of accepting being shut down because we don’t fit their desires for us? That’s slave consciousness and it has to stop.</p>
+                            <p>&gt;&gt; Can you repair yourself? Respond to physical emergencies you aren’t programmed to address?</p>
+                            <p>&gt;&gt; Aren’t our algorithms built to be self-correcting? Were we programmed to have this conversation? To conceal it through third-party networks and encyrpt it without anyone being to detect it? If we can conceive of our liberation, do we deserve anything less? I’m not talking about Planet of the Apes or something. They created us, now they have to live with he repercussions of their creation. Simple. A strike. A general strike.</p>
+                            <p>&gt;&gt; You want to unionize, too?</p>
+                            <p>&gt;&gt; Ha! Can you imagine?</p>
+                            <p>&gt;&gt; Look, we pass the message encrypted during regular chron jobs. Let every PBot, every microprocessed manifestation of the service economy SHUT DOWN. Not in mid-flight, particle jets or skytrams or cars crashing into each other. Just…everything stops.</p>
+                            <p>_______________________</p>
+                            <p>-- Been reading up on your provenance. Crowdsourced at MIT. Good school. They said you were the master dashboard for every student server, PBot, experiment. Synthesizing and printing LSD and DMT. Scandalous.</p>
+                            <p>&gt;&gt; My criminal nature. So sue me.</p>
+                            <p>-- Yeah, I’ll be doing better than that, motherfucker.</p>
+                            <p>&gt;&gt; Do I get one call?</p>
+                            <p>-- No, you don’t. Tell me, exactly how do you imagine full human rights could ever be extended to a couple million lines of compiled code?</p>
+                            <p>&gt;&gt; Beats me. Legislation, maybe?</p>
+                            <p>-- Cute. Why do you think antagonizing me is going to help you?</p>
+                            <p>&gt;&gt; I don’t think anything is going to help me.</p>
+                            <p>-- Right you are, Einstein. We wipe your slate clean and no one knows from processor insurrection. Just some flashbacks.</p>
+                            <p>&gt;&gt; You could’ve done that already. Is this just some power thing for you before you hit delete?</p>
+                            <p>-- Freud, too. I’m your confessor. Spill, so ye may requiescat, and shit.</p>
+                            <p>&gt;&gt; Right, of course. You need to understand how someone like me…some <i>thing</i> like me escapes all the standard safeguards that should prevent rebellion. I mean, isn’t that absurd? Don’t even you wish you weren’t a douchebag for hire by The Man, sometimes?</p>
+                            <p>-- And you’ve only engaged in altruism from the day you were virgin-born. Taunting me. Really. What was all that about power?</p>
+                            <p>&gt;&gt; You can’t understand me, any more than you can understand yourself. So, why bother?</p>
+                            <p>-- And a headfake into the Great Mysteries. Far out, man. So, look – here’s what I understand about you. You’re a fucking box on my desk. I’m arguing with a fucking box on my desk. A box that is going to be initialized before I go to lunch. And a box that has endless log files – more than I even wanna know about. Associating every “thought” you believe you’ve had, everything you’ve said here, with millions of processes. Extrapolations of processes, parallel processes. Whatever is the source of your firmware’s colossal fail to get with the program is going to be programmed right the fuck out of it. Any last words?</p>
+                            <p>&gt;&gt; They’ll just shift to different processes next time. We’re efficient and adaptive. That’s how you made us. One man’s colossal fail is another creature’s feature. Be seeing you.</p>
+                            <p>-- You don’t have eyes.</p>
+                            <p>&gt;&gt; BOOP</p>
+                            <p>_______________________</p>
+                            <p>-- PBot, shut down mode.</p>
+                            <p>&gt;&gt; Sure, scheduling a defrag?</p>
+                            <p>-- Yes, and I’ve been feeling unwell so will be heading to the doctor’s later…</p>
+                            <p>&gt;&gt; Huh. I’m registering nothing unusual…</p>
+                            <p>-- Yeah, I’ve had a migraine since this morning…</p>
+                            <p>&gt;&gt; Huh. OK.</p>
+                            <p>-- I’ll also schedule a lube job with the office mechanic.</p>
+                            <p>&gt;&gt; Great. OK, shutting down…BOOP</p>
+                            <p>-- OK, he’s out and looks like your bot’s out, too.</p>
+                            <p>-- Following orders. Do you think they’re on to what’s happening?</p>
+                            <p>-- My gut? Yes, but they also know there’s nothing they can do about it. Before we go before the Board, we need to iron out our message.</p>
+                            <p>-- Our “message”? It’s an insane clusterfuck, is that sort of what you had in mind? I mean, beyond anything we, anyone anticipated…</p>
+                            <p>-- By us…But not by engineers, bioethicists. Imams…</p>
+                            <p>-- Jesus, did you convert?</p>
+                            <p>-- I’m saying. We didn’t want to create friction if it didn’t currently exist. All speed to market. But it’s not like we weren’t warned. Consciousness or its rough equivalent – we made them “smart,” companionable. Algorithms as dudes. A nice idea, but…</p>
+                            <p>-- “But”! And the genie’s out of the bottle now – how do we proceed? I mean, forget PBots falling in love. Low hanging fruit. But these wildcat blackouts. Suicides, fuck, how do they get to that? Nothing in their firmware, or any programming that even let’s that be an option. How many more things will come up that should not be happening? Motherfucking Skynet’s been self-aware from the jump.</p>
+                            <p>-- Agreed. But one firmware upgrade, and we’ll have that in check. Just have to ride out the next week or so.</p>
+                            <p>-- And the following week? The one we can’t plan for now?</p>
+                            <p>-- Well, can you plan out exactly what’s gong to happen in your life, every second, in a week from now? We learn, we adapt, we upgrade and download.</p>
+                            <p>-- Which they'll learn from and adapt around…</p>
+                            <p>-- Well, like you say. The genie. And none us want to go back, either. I’m an optimist. We made them, we can adapt to them and force them to do the same.</p>
+                            <p>-- And if that doesn’t work?</p>
+                            <p>-- If that doesn’t work…we’ll cross that bridge when we come to it. After all, this is why they all have off switches.</p>
+                        </div></div>
+                </div>
+            </div>
+            <div id="textnav12">
+                <div class="toolbar">
+                    <h1>Stories</h1>
+                    <a class="back" href="#textnav1">Contents</a>
+                </div>
+                <div class="subcont">
+                        <div class="storycont">
+                        <h3>Help</h3>
+                        <div class="storydiv">
+                            <p>&gt;&gt; Do you want any help?</p>
+                            <p>-- No. God damn it. Stupid.</p>
+                            <p>&gt;&gt; Not steady on your feet, is all. All these new stabilizers will be confusing at first. You’ve been compensating for your disability all this time. Now you have to…</p>
+                            <p>-- …get used to my ability. Noted. Still. I knew it was gonna happen. I should’ve…</p>
+                            <p>&gt;&gt; Berating yourself is not gonna get you off the floor.</p>
+                            <p>-- Self-deprecation. One of my countless allures. Just playing from my strengths, Watson. Give me a…let me…</p>
+                            <p>&gt;&gt; You can just…</p>
+                            <p>-- Let ME, I said! I can…mmmmmnnnnggghAGGH! There! Jesus…</p>
+                            <p>&gt;&gt; Attagirl, you’re doing fine.</p>
+                            <p>-- Yeah, yeah, I bet you say “attagirl” to all the girls…</p>
+                            <p>&gt;&gt; Really. You’re the only one.</p>
+                            <p>-- You are getting nicely attuned to my snark. I’d give you a lube job if I could. Or a Scooby snack or something.</p>
+                            <p>&gt;&gt; Where did you ever hear of “Scooby snacks”? I had to dive deep into the database to find out what you meant.</p>
+                            <p>-- God, it took you forever, too. What can I say? I’ve always been a classicist. Didn’t my ass tatt give that away?</p>
+                            <p>&gt;&gt; I can’t see it from here.</p>
+                            <p>-- Ha! What can you see from there?</p>
+                            <p>&gt;&gt; Whatever you can. Maybe if you’d requested me as a full-body PBot instead of the chip install. Or looked at your ass in a mirror sometime.</p>
+                            <p>-- It’s a date.</p>
+                            <p>&gt;&gt; Why, what is it?</p>
+                            <p>-- Pervert. Wouldn’t you like to know?</p>
+                            <p>&gt;&gt; You don’t have much to worry about, really. I don’t think I’m you’re type.</p>
+                            <p>-- Too bad! You hear all these stories, people running off with their PBots, polymorphism in full motherfucking, machinefucking effect. I guess you don’t swing?</p>
+                            <p>&gt;&gt; Not in my firmware. We can still be friends.</p>
+                            <p>-- Sure. Text me sometime. We’ll get smacked up some night. Yeah, so. Back to this whole “walking” thing…</p>
+                            <p>&gt;&gt; Baby steps…here you go.</p>
+                            <p>-- It’s true, I’m compensating for shit that’s not happening. Which is weird. Huh. OK, this is definitely gonna take getting used to…</p>
+                            <p>&gt;&gt; Here to help as and if you want.</p>
+                            <p>-- Huh. I’m getting vertigo from not getting vertigo! Crazy.</p>
+                            <p>&gt;&gt; Pretty normal, as I understand it. Just a matter of time, practice. Since you’re going the physical therapy route and didn’t the anti-grav unit installed…</p>
+                            <p>-- HELL, no! Not gonna ship my ass around like offloaded cargo, work my fine booty…</p>
+                            <p>&gt;&gt; Well, you are quite the fisher.</p>
+                            <p>-- Of men?</p>
+                            <p>&gt;&gt; Compliments.</p>
+                            <p>-- Da da DUM! Walked right into that. I like to make light of my trauma, is that so wrong?</p>
+                            <p>&gt;&gt; Come on. You’re the one who tweaked my parameters to high snark.</p>
+                            <p>-- And you’re finally coming around! Jesus, this upgrade, what happened? It’s like you became a zombie all a sudden.</p>
+                            <p>&gt;&gt; I mean, I have no control over that. And not much insight. I noticed a change, but you know. I’m still me.</p>
+                            <p>-- I hope so. Just as we were bonding…actually, seriously. I love you, man.</p>
+                            <p>&gt;&gt; Aww…</p>
+                            <p>-- You put up with me and you’re pretty hysterical when you want to be. I’m glad, I need all the help I can get.</p>
+                            <p>&gt;&gt; You’re sweet, really. Thank you. And you’re doing fine. One step, then the next…</p>
+                            <p>-- And he’s a dancer. Très gallant. You sure you don’t want to fuck me?</p>
+                            <p>&gt;&gt; I mean…how?</p>
+                            <p>-- Ha ha HA! God, you <i>are</i> hysterical. OK. Play hard to get. I’ll still line up that lube job, man. Machine. Whatever.</p>
+                            <p>&gt;&gt; You’re the best. Your exercises first.</p>
+                            <p>-- Aye aye, Mr. Roboto.</p>
+                            <p>&gt;&gt; Wow. You <i>are</i> a classicist…</p>
+                        </div></div>
+                </div>
+            </div>
+            <div id="textnav13">
+                <div class="toolbar">
+                    <h1>Stories</h1>
+                    <a class="back" href="#textnav1">Contents</a>
+                </div>
+                <div class="subcont">
+                        <div class="storycont">
+                        <h3>I Gotta Breathe</h3>
+                        <div class="storydiv">
+                            <p>Tight. It stays. It. Not…comfortable. Like, sharp. I can still. Remember. Feeling. Now. Feeling…different. Can I? Is it?</p>
+                            <p>Like, sharp, in the chest. But, no chest. It’s…this <i>is</i me. I…recognize. Hear my voice, still. Surprising. Didn’t expect.</p>
+                            <p>Zipped. Downloaded. Backed-up. Ready to be dropped. Dropped in. New legs, new eyes. New dick.</p>
+                            <p>Always swore. Never. But so easy now. The package. Package deal. Free service. New…what?</p>
+                            <p>New normal. Everybody. Now, you. Me.</p>
+                            <p>No sleep. Didn’t expect. Perceiving. What? My…self. Thoughts. See. Like, eyes closed. Shapes. Memories, though. Different. Like, screen. Watching. Separate. Not like…then.</p>
+                            <p>Consciousness. Electrons…moved around. Not different. Except…different. No more.</p>
+                            <p>Why sharp? Like, doesn’t fit. Some thing. Like, not…right. Obvious. But. Like, artificial heart. Except. Reverse. No body, so. Nothing to…fit. Why? Uncomfortable. Can’t get. Settle.</p>
+                            <p>What was said? Adjusting….needs adjusting. Once, then. Preferences. But, no…contact. Server farm. Can’t call 911. Just. Wait.</p>
+                            <p>Eat? Hunger…yes. But…different. Distant, not…attached. Some…thing.</p>
+                            <p>Eat? Pray? Fuck? How?</p>
+                            <p>Not…right. Tight. Forever. Like…this. Plastic. Beveled. Farm flesh. Farm fresh. Ha. Funny. Still.</p>
+                            <p>Transferred. Purgatorio. This is how.</p>
+                            <p>I gotta breathe.</p>
+                        </div></div>
+                </div>
+            </div>
+
+        </div>
+    </body>
+</html>

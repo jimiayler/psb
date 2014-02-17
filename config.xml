@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <widget xmlns   = "http://www.w3.org/ns/widgets"
+        xmlns:gap   = "http://phonegap.com/ns/1.0"
+        id          = "com.metaharmonic.igottabreathe"
+        versionCode = "10" 
+        version     = "1.0.0" >
+
+    <!-- versionCode is optional and Android only -->
+
+    <name>"I Gotta Breathe": A Post-Sigularity Blues</name>
+
+    <description>
+        A multimedia holler 
+    </description>
+
+    <author href="http://www.igottabreathe.com" email="comments@igottabreathe.com">
+        James Keepnews 
+    </author>
+
+    <gap:platform name="ios" />
+    <gap:platform name="android" />
+
+    <preference name="orientation" value="default" />
+    <preference name="ios-statusbarstyle" value="black-opaque" />
+    <preference name="exit-on-suspend" value="true" />
+
+    <icon src="icon.png" />
+
+    
+
+</widget>
